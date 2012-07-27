@@ -14,7 +14,7 @@
 	
 	//@import "swatches/{SWATCH}/variables";
 	//@import "swatches/{SWATCH}/bootswatch";
-	
+
 
 // Extra Mixins
 // --------------------------------------------------------------------------------------------------- //
@@ -78,7 +78,7 @@
 
 	.bs-docs-social { text-align: left; padding: 0; 
 		.Breadcrumbs { display: inline-block; padding: 9px 0 11px;
-			.Crumb { .hide-text();
+			.Crumb { .hide-text;
 			&:after { font-family: @sansFontFamily; color: lighten(@textColor, 15%); font-size: 14px;
 				content: "/ "; }
 			}
@@ -107,6 +107,8 @@
 	h2.CommentHeading, .MessageForm h2 { font-size: 24px; line-height: 1.2; }
 	
 	.MessageList .Message { padding-top: 5px !important; }
+	
+	.Category label { display: inline; }
 	
 	// Data Tables
 	// ----------------------------------------------------------------------------------------------- //
@@ -234,7 +236,7 @@
 		.Content {
 			.modal-header { font-size: 24px; font-weight: bold; line-height: 40px; margin-bottom: 0; }
 		}
-		.Footer { .modal-footer(); }
+		.Footer { .modal-footer; }
 		a.Close { top: 12px; right: 15px; }
 		.close { font-size: 22px; }
 		p { padding: 0; }

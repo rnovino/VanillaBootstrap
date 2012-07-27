@@ -15,13 +15,13 @@ class BootstrapThemeHooks implements Gdn_IPlugin {
 		// Remove unnecessary files 
 		$Sender->RemoveJsFile('jquery.autogrow.js');
 
-		// Add new CSS and Javasript
-		$Sender->AddJsFile('jquery.main.js');
+		// Add new CSS and Javascript
 		$Sender->AddJsFile('jquery.autosize.js');
-		$Sender->AddJsFile('jquery.scroll.js');
+		$Sender->AddJsFile('jquery.chosen.js');
 		$Sender->AddJsFile('jquery.prettify.js');
 		$Sender->AddJsFile('jquery.fitvid.js');
 		$Sender->AddCssFile('prettify.css');
+		$Sender->AddCssFile('chosen.css');
 		
 		// Add Bootstrap Files
 		$Sender->AddJsFile('bootstrap-alert.js');
