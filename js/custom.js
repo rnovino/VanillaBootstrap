@@ -1,12 +1,5 @@
 jQuery(document).ready(function() {
 	
-	// Fix subnav to top and add extra class
-	$('.bs-docs-social.subhead').scrollToFixed({
-		marginTop: 40,
-		preFixed: function() { jQuery(this).addClass('subnav-fixed'); },
-		postFixed: function() { jQuery(this).removeClass('subnav-fixed'); }
-	});
-	
 	$('textarea.TextBox').livequery(function() {
 		$(this).autosize();
 	});

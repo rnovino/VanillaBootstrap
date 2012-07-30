@@ -11,7 +11,7 @@
 	<!-- Navbar
 	================================================== -->
 	
-	<div class="navbar navbar-fixed-top" id="bootstrap-navbar">
+	<div class="navbar navbar-inverse navbar-fixed-top" id="bootstrap-navbar">
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -45,13 +45,13 @@
 						{if !$User.SignedIn}						
 						<li>
 							<a href="{link path="/entry/register"}"> 
-								<i class="icon-edit"></i> Sign up
+								<i class="icon-edit icon-white"></i> Sign up
 							</a>
 						</li>
 						<li class="divider-vertical"></li>
 						<li>
 							<a href="{link path="/entry/signin"}" class="SignInPopup">Have an account? 
-								<i class="icon-signin"></i> <b>Sign in</b>
+								<i class="icon-share-alt icon-white"></i> Sign in
 							</a>
 						</li>
 						<!-- <li class="divider-vertical"></li> -->
