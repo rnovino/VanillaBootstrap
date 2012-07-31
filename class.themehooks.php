@@ -1,5 +1,10 @@
 <?php if (!defined('APPLICATION')) exit();
 
+// LESS PHP Parser
+require dirname(__FILE__) . '/lessc.inc.php';
+lessc::ccompile(dirname(__FILE__) . '/design/main.less', 
+				dirname(__FILE__) . '/design/custom.css');
+
 class BootstrapThemeHooks implements Gdn_IPlugin {
 	
 	public function Setup() {
@@ -16,26 +21,13 @@ class BootstrapThemeHooks implements Gdn_IPlugin {
 		$Sender->RemoveJsFile('jquery.autogrow.js');
 
 		// Add new CSS and Javascript
+		$Sender->AddJsFile('bootstrap.min.js');
 		$Sender->AddJsFile('jquery.autosize.js');
 		$Sender->AddJsFile('jquery.chosen.js');
 		$Sender->AddJsFile('jquery.prettify.js');
 		$Sender->AddJsFile('jquery.fitvid.js');
 		$Sender->AddCssFile('prettify.css');
 		$Sender->AddCssFile('chosen.css');
-		
-		// Add Bootstrap Files
-		$Sender->AddJsFile('bootstrap-alert.js');
-		$Sender->AddJsFile('bootstrap-button.js');
-		$Sender->AddJsFile('bootstrap-carousel.js');
-		$Sender->AddJsFile('bootstrap-collapse.js');
-		$Sender->AddJsFile('bootstrap-dropdown.js');
-		$Sender->AddJsFile('bootstrap-modal.js');
-		$Sender->AddJsFile('bootstrap-popover.js');
-		$Sender->AddJsFile('bootstrap-scrollspy.js');
-		$Sender->AddJsFile('bootstrap-tab.js');
-		$Sender->AddJsFile('bootstrap-tooltip.js');
-		$Sender->AddJsFile('bootstrap-transition.js');
-		$Sender->AddJsFile('bootstrap-typeahead.js');
 
 	}
 	
