@@ -22,3 +22,5 @@ design/images/veganshare.png
 design/images/villabanter.png
 
 views/home.master.tpl
+
+design/custom.css
