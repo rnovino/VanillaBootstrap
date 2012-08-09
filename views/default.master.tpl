@@ -159,7 +159,7 @@
 	// Navigation
 	$('.navbar form').each(function() {
 		$(this).addClass('navbar-search pull-left');
-		$(this).find('input').addClass('search-query').attr('placeholder','Search...');
+		$(this).find('input').addClass('search-query span2').attr('placeholder','Search...');
 		$(this).find('input[type="submit"]').remove();
 	});
 	$('.dropdown-menu ul li hr').livequery(function() {
@@ -206,6 +206,11 @@
 	$('.Entry').each(function() {
 		$(this).find('#panel').remove();
 		$(this).find('#content').toggleClass('span9 span6 offset3');
+	});
+	
+	// Hide elements on mobile devices
+	$('.CommentForm .Buttons > a').each(function() {
+		$(this).addClass('hidden-phone');
 	});
 	
 	</script>{/literal}

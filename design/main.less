@@ -2,7 +2,13 @@
 // --------------------------------------------------------------------------------------------------- //
 
 	@import "bootstrap/bootstrap";
+	@import "bootstrap/responsive";
 	@import "bootstrap/docs";
+	
+	// Sprite icons path
+	// -------------------------
+	@iconSpritePath:          "images/glyphicons-halflings.png";
+	@iconWhiteSpritePath:     "images/glyphicons-halflings-white.png";
 
 
 // Bootswatches
@@ -80,6 +86,7 @@
 			i { .opacity(50); }
 			&:hover i { .opacity(100); }
 		}
+		.search-query { min-width: 260px; }
 	}
 	
 	
@@ -153,6 +160,10 @@
 	.Form-Header .Author .PhotoWrap { margin: 0; }
 	
 	.MarkupHelp { color: rgba(0,0,0,.5); margin-right: 15px; line-height: 2.2; }
+	
+	.Buttons { line-height: 30px;
+		.btn { vertical-align: top; margin-left: 5px; }
+	}
 		
 	// Options Menus
 	// ----------------------------------------------------------------------------------------------- //
@@ -322,3 +333,10 @@
 		.FormWrapper { padding: 15px 25px; .border-radius(5px); }
 	}
 	
+
+// Custom LESS and external stylesheets
+// --------------------------------------------------------------------------------------------------- //
+
+	// Place all custom LESS or external stylesheets here to make sure they overwrite the existing rules
+	
+	//@import "../modernpixels.less";
