@@ -119,11 +119,15 @@
 	
 	.Discussion .PageTitle h1 { margin-top: 0; }
 	
-	.ItemDiscussion .Message { font-size: 100%; padding-top: 5px; }
+	.DiscussionHeader { margin-bottom: 0; }
+	
+	.ItemDiscussion { padding: 8px 0;
+		.Message { font-size: 100%; padding-top: 5px; }
+	}
 	
 	h2.CommentHeading, .MessageForm h2 { font-size: 24px; line-height: 1.2; }
 	
-	.MessageList .Message { padding-top: 5px !important; }
+	.MessageList .Message { padding-top: 8px; }
 	
 	.Category label { display: inline; }
 	
@@ -139,17 +143,30 @@
 				.Options { height: 1px; }
 			}
 		}
-		&.CategoryTable tbody td { vertical-align: top; }
+		&.CategoryTable tbody td { vertical-align: middle; }
 	}
 
 	// Data Lists
 	// ----------------------------------------------------------------------------------------------- //
 
 	.DataList { margin-top: 10px;
-		&.Discussions .Item { padding: 8px 4px; }
-		&.Comments .Item { padding: 15px 4px;
+		&.Discussions .Item { padding: 15px 0px; }
+		&.Comments .Item { padding: 15px 0px;
 			.Message { padding: 10px 0 0; }
 		}
+		.Item { padding: 15px 0;
+			&:first-child { border-top-width: 1px; }
+		}
+	}
+	
+	//Category Tables
+	// ----------------------------------------------------------------------------------------------- //
+	
+	.PageDescription:empty { display: none; }
+	
+	.ChildCategoryList {
+		&:nth-child(2) { border-top-width: 1px; }
+		.ItemContent { padding: 8px 0; }
 	}
 	
 	// Leave a Comment
@@ -162,12 +179,15 @@
 	.MarkupHelp { color: rgba(0,0,0,.5); margin-right: 15px; line-height: 2.2; }
 	
 	.Buttons { line-height: 30px;
-		.btn { vertical-align: top; margin-left: 5px; }
+		.btn { vertical-align: top; }
 	}
 		
 	// Options Menus
 	// ----------------------------------------------------------------------------------------------- //
 	
+	.OptionsMenu {
+		font-size: 100%;
+	}
 	.OptionsMenu .Flyout { right: -5px; left: auto;
 		&:before, &:after { right: 10px; }
 		&:before { border-bottom: 7px solid #CCC; }
@@ -179,6 +199,8 @@
 	.Photo .ProfilePhotoLarge { width: 100%; .box-sizing(border-box); }
 	
 	.Thumbnail img { max-width: inherit; }
+	
+	table.PreferenceGroup, .Info { width: 100% !important; .box-sizing(border-box); }
 	
 	// Search Page
 	// ----------------------------------------------------------------------------------------------- //
@@ -205,12 +227,13 @@
 		.ProfilePhoto { width: 28px; height: 28px; margin-top: 6px; .border-radius(2px); }
 		.Flyout { left: inherit; right: -4px; .box-sizing(border-box);
 			ul { line-height: 20px; }
-			&.FlyoutMenu { padding: 0;
+			&.FlyoutMenu { padding: 0; .border-radius(3px);
 				a { padding: 0; clear: none; }
 				a:hover { background: none; color: @linkColorHover; }
 				.PopList .Center { border-bottom: none;
 					a { padding: 6px; }
 				}
+				.ProfilePhoto { margin-top: 0; width: 34px; height: 34px; }
 			}
 			&:before, &:after { right: 9px; left: auto; }
 			&:before { border-bottom: 7px solid #CCC; }
@@ -246,6 +269,18 @@
 			}
 		}
 	}
+	
+	.PanelCategories .Depth2 { padding-left: 15px + 4px * 0; }
+	.PanelCategories .Depth3 { padding-left: 15px + 4px * 1; }
+	.PanelCategories .Depth4 { padding-left: 15px + 4px * 2; }
+	.PanelCategories .Depth5 { padding-left: 15px + 4px * 3; }
+	.PanelCategories .Depth6 { padding-left: 15px + 4px * 4; }
+	.PanelCategories .Depth7 { padding-left: 15px + 4px * 5; }
+	.PanelCategories .Depth8 { padding-left: 15px + 4px * 6; }
+	.PanelCategories .Depth9 { padding-left: 15px + 4px * 7; }
+	.PanelCategories .Depth10 { padding-left: 15px + 4px * 8; }
+	.PanelCategories .Depth11 { padding-left: 15px + 4px * 9; }
+	.PanelCategories .Depth12 { padding-left: 15px + 4px * 10; }
 	
 
 // Modal Windows
@@ -300,7 +335,8 @@
 	}
 	
 	#Popup .SingleEntryMethod #Form_User_SignIn { margin: 0 auto; padding: 0 15px; max-width: 350px;
-		a.ForgotPassword { float: right; position: relative; margin-top: -30px; .border-radius(0 3px 3px 0); }
+		a.ForgotPassword { float: right; position: relative; margin-top: -30px;
+		.border-radius(0 3px 3px 0); }
 		.CreateAccount { clear: both; color: rgba(0,0,0,.5); }
 	}
 	
