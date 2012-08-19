@@ -2,28 +2,31 @@
 
 // LESS PHP Parser
 require dirname(__FILE__) . '/lessc.inc.php';
-function compile_compress_less($less_file, $css_file) {
+function autoCompileLess($inputFile, $outputFile) {
+	// load the cache
+	$cacheFile = $inputFile.".cache";
 
-	$statsLessFile = stat($less_file);
-	$statsCssFile = stat($css_file);
-	$lastUpdateLessFile = $statsLessFile['mtime'];
-	$lastUpdateCssFile = $statsCssFile['mtime'];
+	if (file_exists($cacheFile)) {
+		$cache = unserialize(file_get_contents($cacheFile));
+	} else {
+		$cache = $inputFile;
+	}
+
+	$less = new lessc;
 	
-	if (!file_exists($css_file) || $lastUpdateLessFile > $lastUpdateCssFile) {
-		$less = new lessc($less_file);
-		$less->setFormatter('compressed');
-		$css = $less->parse();
-		file_put_contents($css_file, $css);
-	}	
+	$less->setFormatter('compressed');
+	
+	$newCache = $less->cachedCompile($cache);
+
+	if (!is_array($cache) || $newCache["updated"] > $cache["updated"]) {
+		file_put_contents($cacheFile, serialize($newCache));
+		file_put_contents($outputFile, $newCache['compiled']);
+	}
 }
 
-// Compile and compress LESS files
-//compile_compress_less(	dirname(__FILE__) . '/design/main.less',
-//						dirname(__FILE__) . '/design/custom.css');
-
-// Compile LESS files without compression
-lessc::ccompile(dirname(__FILE__) . '/design/main.less', 
-				dirname(__FILE__) . '/design/custom.css');
+// Compile LESS
+autoCompileLess(	dirname(__FILE__) . '/design/main.less',
+					dirname(__FILE__) . '/design/custom.css');
 
 class BootstrapThemeHooks implements Gdn_IPlugin {
 	

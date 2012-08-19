@@ -1,0 +1,115 @@
+// ModernPixels
+// --------------------------------------------------------------------------------------------------- //
+
+// A super clean and modern theme for VanillaBootstrap.
+
+
+// Bootstrap Variables
+// --------------------------------------------------------------------------------------------------- //
+	
+	@bodyBackground: #f4f4f4;
+	@linkColor: #379ad3;
+	@linkColorHover: #333;
+	@textColor: #555;
+	
+
+	.box {
+		background-color: #fff;
+		.border-radius(3px);
+		.box-shadow(0 1px 1px rgba(0,0,0,0.15));
+	}
+
+
+// Basic HTML Elements
+// --------------------------------------------------------------------------------------------------- //
+	
+	a:not(.btn):not(.Bookmark) {
+		.transition(250ms linear all);
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+	}
+	
+	h3 {
+		font-size: 1.25em;
+		line-height: 1.8em;
+		margin-top: 0.9em;
+		margin-bottom: 0.7em;
+	}
+	
+	.bs-docs-canvas {
+		background: #f4f4f4;
+	}
+	
+	.bs-docs-social {
+		background: @white;
+	}
+	
+	.jumbotron {
+		background-color: @blue;
+		background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .07) 50%, transparent 50%), -webkit-linear-gradient(0deg, rgba(255, 255, 255, .13) 50%, transparent 50%), -webkit-linear-gradient(0deg, transparent 50%, rgba(255, 255, 255, .17) 50%), -webkit-linear-gradient(0deg, transparent 50%, rgba(255, 255, 255, .19) 50%);
+		background-size: 13px, 29px, 37px, 53px;
+	}
+	
+	.MessageList.Discussion,
+	.DataList.Discussions,
+	.DataBox-Comments {
+		.box;
+	}
+	
+	.MessageList.Discussion {
+		padding: 5px 15px 15px;
+		.ItemDiscussion {
+			margin-bottom: 0;
+			padding: 0;
+		}
+	}
+	
+	.DataBox-Comments {
+		padding: 5px 15px 15px;
+		margin-top: 20px;
+	}
+	
+	.Discussion .PageTitle h1,
+	h2.CommentHeading {
+		font-size: 1.25em;
+		line-height: 1.8em;
+		margin-top: 5px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid @grayLighter;
+	}
+	
+	#panel ul {
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: 300;
+		padding: 0;
+		li {
+			padding: 5px 8px 6px;
+			margin: 0 0 5px;
+			.border-radius(3px);
+			.transition(250ms linear all);
+			&:hover {
+				background: rgba(0, 0, 0, 0.1);
+				a { color: @linkColorHover; }
+			}
+			&.Active {
+				box-shadow: 0 1px 3px black inset, 0 1px 0 white;
+				background-color: #333 !important;
+				a { color: @white; }
+			}
+			&.active a {
+				background: none;
+			}
+			a {
+				padding: 0;
+				margin: 0;
+				color: @textColor;
+				font-weight: 300;
+				&:hover {
+					background: none;
+				}
+			}
+		}
+	}

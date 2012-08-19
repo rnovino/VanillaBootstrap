@@ -132,6 +132,12 @@
 	
 	{literal}<script type="text/javascript">
 	
+	// Why is all of this stuff placed here?
+	//
+	// You see, I place it at the end of the body element to avoid a FOUC
+	// as the JS would otherwise be executed after the DOM is created.
+	
+	
 	// Fix an annoying bug
 	$('body').removeClass('thumbnail');
 	
@@ -155,6 +161,9 @@
 	$('.FlyoutMenu').livequery(function() {
 		$(this).addClass('dropdown-menu');
 	});
+	$('.ac_results').livequery(function() {
+		$(this).find('ul').addClass('typeahead dropdown-menu');
+	});
 	
 	// Navigation
 	$('.navbar form').each(function() {
@@ -174,10 +183,8 @@
 	
 	// Modals
 	$('.Popup').livequery(function() { $(this).find('.Body').addClass('modal'); });
-	$('.Popup h1').livequery(function() { $(this).addClass('modal-header'); });
-	$('.Popup .Content .MainForm').livequery(function() { $(this).addClass('modal-body'); });
-	$('.Popup .Content .Legal').livequery(function() { $(this).addClass('modal-body'); });
-	$('.Popup .Content > p').livequery(function() { $(this).addClass('modal-body'); });
+	$('.Popup h1, .Popup h2').livequery(function() { $(this).addClass('modal-header'); });
+	$('.Popup .Content .MainForm, .Popup .Content .Legal, .Popup .Content > form, .Popup .Content > p').livequery(function() { $(this).addClass('modal-body'); });
 	$('.Popup .Footer span').livequery(function() { $(this).addClass('close'); });
 	
 	// Grouped Buttons
@@ -207,11 +214,12 @@
 		$(this).find('#panel').remove();
 		$(this).find('#content').toggleClass('span9 span6 offset3');
 	});
+	$('body.Conversations.add #panel, body.Vanilla.Post #panel').remove();
+	$('body.Conversations.add #content, body.Vanilla.Post #content').toggleClass('span9 span10 offset1');
 	
 	// Hide elements on mobile devices
-	$('.CommentForm .Buttons > a').each(function() {
-		$(this).addClass('hidden-phone');
-	});
+	$('.CommentForm .Buttons > a').addClass('hidden-phone');
+	$('.BlockColumn-User, .DraftButton, .PreviewButton ').addClass('hidden-phone');
 	
 	</script>{/literal}
 	

@@ -1,9 +1,10 @@
-// Import the Bootstrap Framework
+// Import the Bootstrap Framework and Plugins
 // --------------------------------------------------------------------------------------------------- //
 
 	@import "bootstrap/bootstrap";
 	@import "bootstrap/responsive";
 	@import "bootstrap/docs";
+	@import "plugins";
 	
 	// Sprite icons path
 	// -------------------------
@@ -165,6 +166,7 @@
 	.PageDescription:empty { display: none; }
 	
 	.ChildCategoryList {
+		.Item { padding: 0; }
 		&:nth-child(2) { border-top-width: 1px; }
 		.ItemContent { padding: 8px 0; }
 	}
@@ -213,7 +215,23 @@
 		.border-radius(0 3px 3px 0); }
 	}
 	
-
+	// Messages Page
+	// ----------------------------------------------------------------------------------------------- //
+	
+	textarea.MultiComplete { height: 30px; }
+	
+	.ac_results { width: auto !important; border: none; background: none; overflow: visible;
+		ul { display: block; position: relative; margin-top: 2px; padding: 5px 0; 
+			li { padding: 3px 20px; font-size: 100%; line-height: 20px; }
+		}
+		strong { background: none; }
+		.ac_over { color: @dropdownLinkColorHover;
+			background-color: @dropdownLinkBackgroundHover;
+			#gradient > .vertical(@dropdownLinkBackgroundHover,
+			darken(@dropdownLinkBackgroundHover, 5%)); }
+	}
+	
+	
 // Sidebar Pane
 // --------------------------------------------------------------------------------------------------- //
 	
@@ -291,16 +309,18 @@
 	#Popup {
 		.Border { padding: 0; }
 		.Body { padding: 0; }
-		.modal-header { padding: 19px 15px; }
+		.modal-header { margin: 0; }
+		.modal-body { padding: 15px; }
 		.Content {
 			.modal-header { font-size: 24px; font-weight: bold; line-height: 40px; margin-bottom: 0; }
 		}
 		.Footer { .modal-footer; }
 		a.Close { top: 12px; right: 15px; }
 		.close { font-size: 22px; }
-		p { padding: 0; }
+		p:not(.modal-body) { padding: 0; }
 	}
 	
+	.Buttons-Confirm { text-align: left; }	
 
 // Alerts
 // --------------------------------------------------------------------------------------------------- //
@@ -375,4 +395,4 @@
 
 	// Place all custom LESS or external stylesheets here to make sure they overwrite the existing rules
 	
-	//@import "../modernpixels.less";
+	//@import "themes/modernpixels";
