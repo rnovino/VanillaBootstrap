@@ -5,6 +5,13 @@
 	{asset name='Head'}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
+	{literal}<script type="text/javascript">
+		$('html').hide();
+		$(document).ready(function() {
+			$('html').show();
+		});
+	</script>{/literal}
+	
 </head>
 <body id="{$BodyID}" class="{$BodyClass}" onload="prettyPrint()">
 	
@@ -136,7 +143,6 @@
 	//
 	// You see, I place it at the end of the body element to avoid a FOUC
 	// as the JS would otherwise be executed after the DOM is created.
-	
 	
 	// Fix an annoying bug
 	$('body').removeClass('thumbnail');
