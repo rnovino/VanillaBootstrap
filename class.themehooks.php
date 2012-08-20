@@ -43,17 +43,6 @@ class BootstrapThemeHooks implements Gdn_IPlugin {
 		// Remove unnecessary files 
 		$Sender->RemoveJsFile('jquery.autogrow.js');
 
-		// Add new CSS and Javascript
-		$Sender->AddJsFile('bootstrap.min.js');
-		$Sender->AddJsFile('jquery.autosize.js');
-		$Sender->AddJsFile('jquery.chosen.js');
-		$Sender->AddJsFile('jquery.lazyload.js');
-		$Sender->AddJsFile('jquery.prettify.js');
-		$Sender->AddJsFile('jquery.fitvid.js');
-		$Sender->AddJsFile('jquery.sisyphus.js');
-		$Sender->AddCssFile('prettify.css');
-		$Sender->AddCssFile('chosen.css');
-
 	}
 	
 	// Add excerpts to discussion listings
