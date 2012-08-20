@@ -47,8 +47,10 @@ class BootstrapThemeHooks implements Gdn_IPlugin {
 		$Sender->AddJsFile('bootstrap.min.js');
 		$Sender->AddJsFile('jquery.autosize.js');
 		$Sender->AddJsFile('jquery.chosen.js');
+		$Sender->AddJsFile('jquery.lazyload.js');
 		$Sender->AddJsFile('jquery.prettify.js');
 		$Sender->AddJsFile('jquery.fitvid.js');
+		$Sender->AddJsFile('jquery.sisyphus.js');
 		$Sender->AddCssFile('prettify.css');
 		$Sender->AddCssFile('chosen.css');
 
@@ -62,9 +64,11 @@ class BootstrapThemeHooks implements Gdn_IPlugin {
 			'class'  => "Excerpt"
 		));
 		
-	} public function CategoriesController_AfterDiscussionTitle_Handler($Sender) {
-        $this->DiscussionsController_AfterDiscussionTitle_Handler($Sender);
-    }
+	}
+	
+	public function CategoriesController_AfterDiscussionTitle_Handler($Sender) {
+		$this->DiscussionsController_AfterDiscussionTitle_Handler($Sender);
+	}
 	
 	// Add input notifiers to comment form
 	public function DiscussionController_BeforeFormButtons_Handler($Sender) {

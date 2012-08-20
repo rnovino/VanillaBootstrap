@@ -1,10 +1,22 @@
 jQuery(document).ready(function() {
 	
+	// Autosize textareas
 	$('textarea.TextBox').livequery(function() {
 		$(this).autosize();
 	});
 	
+	// Make videos fluid
 	$('.Video').fitVids();
+	
+	// Save forms locally
+	$('form').livequery(function(){
+		$(this).sisyphus({timeout: 5});
+	});
+	
+	// Stop auto drafts
+	$.fn.autosave = function(opts) {
+		return;
+	}
 	
 	// Smooth Scroll to Top
 	$('.back-to-top').click(function(){

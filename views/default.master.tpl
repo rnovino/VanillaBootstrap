@@ -145,6 +145,15 @@
 	// Fix an annoying bug
 	$('body').removeClass('thumbnail');
 	
+	// Lazy load all images
+	$('img').each(function() {
+		$(this).attr('data-original', $(this).attr('src'));
+		$(this).attr('src', 'http://placehold.it/1x1');
+	});
+	$('img').lazyload({
+		effect : 'fadeIn'
+	});
+	
 	// Buttons
 	$('.Button').toggleClass('Button btn');
 	$('.Button').livequery(function() {
