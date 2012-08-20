@@ -54,6 +54,18 @@ class BootstrapThemeHooks implements Gdn_IPlugin {
 
 	}
 	
+	// Add excerpts to discussion listings
+	public function DiscussionsController_AfterDiscussionTitle_Handler($Sender) {
+      
+		$Excerpt = $Sender->EventArguments['Discussion']->Body;
+		echo Wrap(SliceString(strip_tags($Excerpt), 100), 'div', array(
+			'class'  => "Excerpt"
+		));
+		
+	} public function CategoriesController_AfterDiscussionTitle_Handler($Sender) {
+        $this->DiscussionsController_AfterDiscussionTitle_Handler($Sender);
+    }
+	
 	// Add input notifiers to comment form
 	public function DiscussionController_BeforeFormButtons_Handler($Sender) {
 		if (C('Garden.InputFormatter') == 'Markdown')

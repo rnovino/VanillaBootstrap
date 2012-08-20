@@ -12,15 +12,21 @@ jQuery(document).ready(function() {
 		return false;
 	});
 	
-	// Fancy Fade Jumbotron
-	/*var $jumbotron  = $('.jumbotron')
-		, $jcontainer = $('.jumbotron .container')
-		, opacRatio   = ($jumbotron.height() / 200 ) * 2
-
-	/$(window).on('scroll', function () {
-		var diff = 100 - ($(window).scrollTop() / opacRatio)
-		$jcontainer.css({ opacity: (diff > 0 ? Math.min(diff, 100) : 0) / 100 })
-	});*/
+	// Nice excerpt popovers
+	$('.ItemDiscussion').each(function() {
+		item = $(this).find('a.Title');
+		title = item.text();
+		excerpt = $(this).find('.Excerpt').remove().text();
+		item
+			.attr('rel', 'tooltip')
+			//.attr('data-title', 'Excerpt')
+			.attr('data-original-title', excerpt)
+			.attr('data-placement', 'right');
+	});
+	
+	// Enable Popovers and Tooltips
+	$("a[rel=popover]").popover();
+	$("a[rel=tooltip]").tooltip();
 	
 	// Make Category selectors utilize Chosen
 	$('.Category select').each(function() {

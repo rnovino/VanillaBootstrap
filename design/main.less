@@ -50,7 +50,8 @@
 	// Basic Buttons
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.BigButton.btn { display: block; font-size: 18px; padding: 10px 14px; font-weight: normal; }
+	.BigButton.btn { display: block; font-size: 18px; padding: 10px 14px; font-weight: normal;
+	margin-bottom: 10px; }
 	
 	// Grouped Buttons
 	// ----------------------------------------------------------------------------------------------- //
@@ -95,11 +96,12 @@
 // --------------------------------------------------------------------------------------------------- //
 
 	.bs-docs-social { text-align: left; padding: 0; 
-		.Breadcrumbs { display: inline-block; padding: 9px 0 11px;
-			.Crumb { .hide-text;
-			&:after { font-family: @sansFontFamily; color: lighten(@textColor, 15%); font-size: 14px;
+		.Breadcrumbs { display: inline-block; padding: 9px 0 11px; text-shadow: 0 1px 0 @white;
+			.Crumb { .hide-text; padding: 0 5px;
+			&:after { font-family: @sansFontFamily; color: @grayLight; font-size: 14px;
 				content: "/ "; }
 			}
+			.CrumbLabel:last-child a { color: @grayLight; }
 		}
 	}
 
@@ -123,19 +125,20 @@
 	.DiscussionHeader { margin-bottom: 0; }
 	
 	.ItemDiscussion { padding: 8px 0;
+		.Meta { overflow: auto; }
 		.Message { font-size: 100%; padding-top: 5px; }
 	}
 	
 	h2.CommentHeading, .MessageForm h2 { font-size: 24px; line-height: 1.2; }
 	
-	.MessageList .Message { padding-top: 8px; }
+	.MessageList .Message { padding-top: 0; margin-top: 8px; }
 	
 	.Category label { display: inline; }
 	
 	// Data Tables
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.DataTable { margin-top: 10px;
+	.DataTable { margin-top: 10px; margin-bottom: 10px;
 		thead td { vertical-align: middle; border-top: 1px solid lighten(@tableBorder, 6%);
 		border-bottom: 1px solid lighten(@tableBorder, 6%); padding: 8px 4px; }
 		tbody .BlockColumn { padding: 12px 4px; }
@@ -145,25 +148,43 @@
 			}
 		}
 		&.CategoryTable tbody td { vertical-align: middle; }
+		.Item {
+			&.Read { background: transparent; }
+		}
 	}
 
-	// Data Lists
+	// Data and Message Lists
 	// ----------------------------------------------------------------------------------------------- //
 
-	.DataList { margin-top: 10px;
-		&.Discussions .Item { padding: 15px 0px; }
+	.DataList { margin-top: 10px; margin-bottom: 10px;
 		&.Comments .Item { padding: 15px 0px;
-			.Message { padding: 10px 0 0; }
+			.Message { margin: 10px 0 0; }
 		}
-		.Item { padding: 15px 0;
+		.Item {
+			&.Activity { padding: 15px 0; }
+			&.Read { background: transparent; }
 			&:first-child { border-top-width: 1px; }
 		}
+		.Item-Header { overflow: auto; margin-bottom: 10px; }
+		.Meta { overflow: auto; }
 	}
 	
-	//Category Tables
+	.MessageList {
+		.Item-Header { overflow: auto; margin-bottom: 10px; }
+		.Item { padding: 15px 0; }
+	}
+	
+	// Category Tables
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.PageDescription:empty { display: none; }
+	.CategoryTable {
+		h2 { font-size: 18px; }
+		.CategoryDescription { margin-bottom: 10px; }
+	}
+	
+	.PageDescription { margin: 15px 0;
+		&:empty { display: none; }
+	}
 	
 	.ChildCategoryList {
 		.Item { padding: 0; }
@@ -224,7 +245,7 @@
 	
 	.ac_results { width: auto !important; border: none; background: none; overflow: visible;
 		ul { display: block; position: relative; margin-top: 2px; padding: 5px 0; 
-			li { padding: 3px 20px; font-size: 100%; line-height: 20px; }
+			li { padding: 3px 20px; font-size: 100%; line-height: 20px; border-bottom: none; }
 		}
 		strong { background: none; }
 		.ac_over { color: @dropdownLinkColorHover;
@@ -251,7 +272,7 @@
 				a { padding: 0; clear: none; display: inline-block; }
 				a:hover { background: none; color: @linkColorHover; }
 				.PopList .Center { border-bottom: none;
-					a { padding: 6px; }
+					a { padding: 6px; display: block; }
 				}
 				.ProfilePhoto { margin-top: 0; width: 34px; height: 34px; }
 			}
@@ -265,7 +286,7 @@
 	// Filter Menu
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.FilterMenu { margin-top: 20px; margin-right: 0; 
+	.FilterMenu { margin: 20px 0;
 		.Aside { float: right; }
 		i:before { font-weight: bold; }
 	}
@@ -273,7 +294,7 @@
 	// Panel Panes
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.Box {
+	.Box { margin: 15px 0;
 		h4 { border-bottom: 1px solid rgba(0,0,0,.05); padding-bottom: 5px; margin-bottom: 10px;
 		margin-top: 0; }
 		&.GuestBox { margin-top: 0; }
@@ -306,6 +327,8 @@
 // Modal Windows
 // --------------------------------------------------------------------------------------------------- //
 	
+	.Loading { width: 40px; margin: 0 auto; }
+	
 	.Overlay { background-color: rgba(0,0,0,.8); }
 	
 	#Popup {
@@ -331,7 +354,7 @@
 	// ----------------------------------------------------------------------------------------------- //
 	
 	#bootstrap-container, #Popup {
-		.Errors ul { padding: 8px 35px 8px 14px; margin-bottom: @baseLineHeight; 
+		.Errors ul, .Warning { padding: 8px 35px 8px 14px; margin-bottom: @baseLineHeight; 
 		text-shadow: 0 1px 0 rgba(255,255,255,.5) !important;
 		background-color: @errorBackground !important; border: 1px solid @errorBorder !important;
 		.border-radius(4px) !important; color: @errorText !important; 
@@ -397,4 +420,4 @@
 
 	// Place all custom LESS or external stylesheets here to make sure they overwrite the existing rules
 	
-	//@import "themes/modernpixels";
+	//@import "../themes/modernpixels";

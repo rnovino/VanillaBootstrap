@@ -27,7 +27,7 @@
 					<span class="icon-bar"></span>
 				</a>
 
-				<a class="brand" href="/">VanillaBootstrap</a>
+				<a class="brand" href="/"><!--{logo}-->VanillaBootstrap</a>
  
 				<div class="nav-collapse">
 					<ul class="nav">
@@ -46,7 +46,6 @@
 						<li>
 							{link path="signinout"}
 						</li>
-						<!-- <li class="divider-vertical"></li> -->
 						</li>
 						{/if}
 						{if !$User.SignedIn}						
@@ -61,7 +60,6 @@
 								<i class="icon-share-alt icon-white"></i> Sign in
 							</a>
 						</li>
-						<!-- <li class="divider-vertical"></li> -->
 						{/if}
 					</ul>
 				</div>
@@ -148,15 +146,39 @@
 	$('body').removeClass('thumbnail');
 	
 	// Buttons
-	$('.Button').each(function() { 					$(this).toggleClass('Button btn'); });
-	$('.Button').livequery(function() { 			$(this).toggleClass('Button btn'); });
-	$('a.Cancel').each(function() { 				$(this).addClass('btn btn-danger'); });
-	$('a.Cancel').livequery(function() { 			$(this).addClass('btn btn-danger'); });
-	$('.Cancel').find('a').livequery(function() { 	$(this).addClass('btn btn-danger'); });
-	$('.NavButton').each(function() {				$(this).toggleClass('NavButton btn'); });
-	$('.NewDiscussion').each(function() {			$(this).addClass('btn-primary'); });
-	$('.ForgotPassword').livequery(function() {		$(this).addClass('btn btn-danger'); });
-	$('.Primary.btn').livequery(function() {		$(this).addClass('btn-primary'); });
+	$('.Button').toggleClass('Button btn');
+	$('.Button').livequery(function() {
+		$(this).toggleClass('Button btn');
+	});
+	$('a.Cancel, .Danger').addClass('btn btn-danger');
+	$('a.Cancel').livequery(function() { $(this).addClass('btn btn-danger'); });
+	$('.Cancel').find('a').livequery(function() {
+		$(this).addClass('btn btn-danger');
+	});
+	$('.NavButton').toggleClass('NavButton btn');
+	$('.NewDiscussion').addClass('btn-primary');
+	$('.ForgotPassword').livequery(function() {
+		$(this).addClass('btn btn-danger');
+	});
+	$('.Primary.btn, .DiscussionButton').livequery(function() { 
+		$(this).addClass('btn-primary');
+	});
+	
+	// Labels and Badges
+	$('.Tag').addClass('label');
+	$('.Count').addClass('badge badge-info');
+	$('.Alert').addClass('badge badge-important');
+	$('.HasNew').addClass('badge badge-warning');
+	
+	// Alerts
+	$('.AlertMessage, .InfoMessage').addClass('alert');
+	$('.CasualMessage').addClass('alert alert-info');
+	$('.WarningMessage').addClass('alert alert-danger');
+	
+	// Pagination
+	$('.MorePager').livequery(function() {
+		$(this).find('a').addClass('btn btn-small btn-block');
+	});
 	
 	// Flyout Menus
 	$('.MenuItems').toggleClass('MenuItems dropdown-menu');
@@ -190,7 +212,7 @@
 	// Modals
 	$('.Popup').livequery(function() { $(this).find('.Body').addClass('modal'); });
 	$('.Popup h1, .Popup h2').livequery(function() { $(this).addClass('modal-header'); });
-	$('.Popup .Content .MainForm, .Popup .Content .Legal, .Popup .Content > form, .Popup .Content > p').livequery(function() { $(this).addClass('modal-body'); });
+	$('.Popup .Content .MainForm, .Popup .Content .Legal, .Popup .Content form, .Popup .Content > p').livequery(function() { $(this).addClass('modal-body'); });
 	$('.Popup .Footer span').livequery(function() { $(this).addClass('close'); });
 	
 	// Grouped Buttons
