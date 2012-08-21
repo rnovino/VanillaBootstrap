@@ -26,12 +26,6 @@
 	
 	//@import "swatches/{SWATCH}/variables";
 	//@import "swatches/{SWATCH}/bootswatch";
-
-
-// Extra Mixins
-// --------------------------------------------------------------------------------------------------- //
-
-	.fontIcon(@icon) { font-family: FontAwesome; font-weight: normal; content: @icon; }
 		
 		
 // Basic HTML Elements
@@ -84,6 +78,13 @@
 	}
 	
 	.TextBoxWrapper { padding-right: 0; }
+	
+	// Labels
+	// ----------------------------------------------------------------------------------------------- //
+	
+	.CheckBoxLabel { display: inline-block; padding-top: 5px; margin: 0 10px 0 0; vertical-align: middle;
+		input { float: left; margin-right: 5px; }
+	}
 
 // Main Navigation
 // --------------------------------------------------------------------------------------------------- //
@@ -125,7 +126,7 @@
 	// Discussions
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.Discussion .PageTitle h1 { margin-top: 0; }
+	.Discussion .PageTitle h1 { margin-top: 0; margin-bottom: 0; }
 	
 	.DiscussionHeader { margin-bottom: 0; }
 	
@@ -191,6 +192,8 @@
 		&:empty { display: none; }
 	}
 	
+	.PageControls:empty { display: none; }
+	
 	.ChildCategoryList {
 		.Item { padding: 0; }
 		&:nth-child(2) { border-top-width: 1px; }
@@ -209,6 +212,11 @@
 	.Buttons { line-height: 30px;
 		.btn { vertical-align: top; }
 	}
+	
+	// New Discussion
+	// ----------------------------------------------------------------------------------------------- //
+	
+	.DiscussionForm .PostOptions label { display: inline-block; }
 		
 	// Options Menus
 	// ----------------------------------------------------------------------------------------------- //
@@ -258,6 +266,11 @@
 			#gradient > .vertical(@dropdownLinkBackgroundHover,
 			darken(@dropdownLinkBackgroundHover, 5%)); }
 	}
+	
+	// Pagination
+	// ----------------------------------------------------------------------------------------------- //
+	
+	.Pager a, .Pager span { margin: 0; }
 	
 	
 // Sidebar Pane
@@ -376,9 +389,10 @@
 	#Popup .SingleEntryMethod {
 		input { max-width: 100%; width: 100%; margin-bottom: 0;
 			&[type="password"] { margin-bottom: 0; padding-right: 77px; }
-			&[type="checkbox"] { width: auto;  float: left; margin: 0; height: 30px; }
+			&[type="checkbox"] { width: auto;  float: left; margin: 0 5px 0 0; height: 30px; }
 		}
 		label { margin-bottom: 9px; }
+		.CheckBoxLabel { display: inline-block; margin: 0; line-height: 30px; }
 		li { clear: both; }
 		input.btn { width: auto; float: right; }
 		.Buttons { width: 100%; line-height: 30px; margin-top: 9px; }
@@ -392,7 +406,6 @@
 	
 	#Popup .SingleEntryMethod #Form_User_Password {  margin: 0 auto; padding: 0 15px; max-width: 350px;
 		.btn { .box-sizing(border-box); }
-		input.btn {  }
 		.Buttons { overflow: auto; }
 		a.ForgotPassword { margin-left: 0; float: left; }
 	}
@@ -414,7 +427,7 @@
 	
 	.Entry.register #content {
 		input { width: 100%; 
-			&[type="radio"], &[type="checkbox"] { width: auto; height: 18px; margin-right: 2px; }
+			&[type="radio"], &[type="checkbox"] { width: auto; height: 18px; margin-right: 5px; }
 		}
 		.FormWrapper { padding: 15px 25px; .border-radius(5px); }
 	}

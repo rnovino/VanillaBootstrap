@@ -188,6 +188,11 @@
 	$('.MorePager').livequery(function() {
 		$(this).find('a').addClass('btn btn-small btn-block');
 	});
+	$('.PageControls').each(function() {
+		$(this).find('.Pager').addClass('btn-group');
+		$(this).find('a, span').addClass('btn');
+		$(this).find('.Highlight').addClass('active');
+	});
 	
 	// Flyout Menus
 	$('.MenuItems').toggleClass('MenuItems dropdown-menu');
