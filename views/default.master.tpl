@@ -28,8 +28,11 @@
 				</a>
 
 				<a class="brand" href="/"><!--{logo}-->VanillaBootstrap</a>
- 
-				<div class="nav-collapse">
+				
+				<!-- Desktop and Tablet navigation
+				================================================== -->
+				
+				<div class="nav-collapse hidden-phone">
 					<ul class="nav">
 						<li class="dropdown">
 							<a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
@@ -58,6 +61,35 @@
 						<li>
 							<a href="{link path="/entry/signin"}" class="SignInPopup">Have an account? 
 								<i class="icon-share-alt icon-white"></i> Sign in
+							</a>
+						</li>
+						{/if}
+					</ul>
+				</div>
+				
+				<!-- Phone navigation
+				================================================== -->
+				
+				<div class="nav-collapse hidden-desktop hidden-tablet">
+					<ul class="nav">
+						{discussions_link}
+						{activity_link}
+						{if $User.SignedIn}						
+						<li>
+							{link path="signinout"}
+						</li>
+						</li>
+						{/if}
+						{if !$User.SignedIn}						
+						<li>
+							<a href="{link path="/entry/register"}"> 
+								<i class="icon-edit icon-white"></i> Register new account
+							</a>
+						</li>
+						<li class="divider-vertical"></li>
+						<li>
+							<a href="{link path="/entry/signin"}" class="SignInPopup">
+								<i class="icon-share-alt icon-white"></i> Login to your account
 							</a>
 						</li>
 						{/if}
@@ -226,7 +258,7 @@
 	// Modals
 	$('.Popup').livequery(function() { $(this).find('.Body').addClass('modal'); });
 	$('.Popup h1, .Popup h2').livequery(function() { $(this).addClass('modal-header'); });
-	$('.Popup .Content .MainForm, .Popup .Content .Legal, .Popup .Content form, .Popup .Content > p').livequery(function() { $(this).addClass('modal-body'); });
+	$('.Popup .Content .MainForm, .Popup .Content .Legal, .Popup .Content > form, .Popup .Content > p, .Popup .Content .Methods').livequery(function() { $(this).addClass('modal-body'); });
 	$('.Popup .Footer span').livequery(function() { $(this).addClass('close'); });
 	
 	// Grouped Buttons
@@ -258,10 +290,6 @@
 	});
 	$('body.Conversations.add #panel, body.Vanilla.Post #panel').remove();
 	$('body.Conversations.add #content, body.Vanilla.Post #content').toggleClass('span9 span10 offset1');
-	
-	// Hide elements on mobile devices
-	$('.CommentForm .Buttons > a').addClass('hidden-phone');
-	$('.BlockColumn-User, .DraftButton, .PreviewButton ').addClass('hidden-phone');
 	
 	</script>{/literal}
 	

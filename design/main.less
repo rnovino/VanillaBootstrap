@@ -14,6 +14,8 @@
 	@import "plugins/prettify";
 	
 	// Vanilla plugins
+	@import "plugins/buttonbar";
+	@import "plugins/signatures";
 	@import "plugins/tagging";
 
 
@@ -34,6 +36,7 @@
 	* {
 		-webkit-font-smoothing: antialiased;
 		font-smoothing: always;
+		word-wrap: break-word;
 	}
 	
 	a:hover {
@@ -214,6 +217,7 @@
 	
 	.ItemDiscussion {
 		padding: 8px 0;
+		margin: 0;
 		.Message {
 			font-size: 100%;
 			padding-top: 5px;
@@ -222,6 +226,7 @@
 	
 	h2.CommentHeading,
 	.MessageForm h2 {
+		margin-top: 0;
 		font-size: 24px;
 		line-height: 1.2;
 	}
@@ -229,6 +234,12 @@
 	.MessageList .Message {
 		padding-top: 0;
 		margin-top: 8px;
+	}
+	
+	.Message {
+		p:last-child {
+			margin-bottom: 0;
+		}
 	}
 	
 	.Category label {
@@ -306,6 +317,7 @@
 	.MessageList {
 		.Item-Header {
 			overflow: auto;
+			margin-top: 0;
 			margin-bottom: 10px;
 		}
 		.Item {
@@ -332,8 +344,11 @@
 		}
 	}
 	
-	.PageControls:empty {
-		display: none;
+	.PageControls {
+		min-height: 30px;
+		&:empty {
+			display: none;
+		}
 	}
 	
 	.ChildCategoryList {
@@ -577,6 +592,14 @@
 		i:before {
 			font-weight: bold;
 		}
+		.Count {
+			background: @linkColor;
+		}
+		.active {
+			.Count {
+				background: none;
+			}
+		}
 	}
 	
 	// Panel Panes
@@ -607,6 +630,9 @@
 			&:hover {
 				background: rgba(0,0,0,0.07);
 			}
+			.Count {
+				background: @linkColor;
+			}
 			&.Active {
 				background-color: @linkColor;
 				> a,
@@ -614,6 +640,9 @@
 					color: @white;
 					font-weight: normal;
 					text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+				}
+				.Count {
+					background: none;
 				}
 			}
 		}
@@ -732,11 +761,24 @@
 
 // Forms
 // --------------------------------------------------------------------------------------------------- //
+	
+	.MainForm,
+	#Popup .MainForm {
+		float: none !important;
+		width: auto !important;
+		padding: 15px;
+		.InputBox {
+			max-width: none;
+		}
+	}
 
-	// Single Entry Sign-in
+	// Sign-in Popup form
 	// ----------------------------------------------------------------------------------------------- //
 	
-	#Popup .SingleEntryMethod {
+	.SingleEntryMethod,
+	.MultipleEntryMethods,
+	#Popup .SingleEntryMethod,
+	#Popup .MultipleEntryMethods {
 		input {
 			max-width: 100%;
 			width: 100%;
@@ -762,6 +804,9 @@
 		}
 		li {
 			clear: both;
+			&:first-child label {
+				margin-top: 0;
+			}
 		}
 		input.btn {
 			width: auto;
@@ -774,9 +819,12 @@
 		}
 	}
 	
-	#Popup .SingleEntryMethod #Form_User_SignIn {
+	.SingleEntryMethod #Form_User_SignIn,
+	.MultipleEntryMethods #Form_User_SignIn,
+	#Popup .SingleEntryMethod #Form_User_SignIn,
+	#Popup .MultipleEntryMethods #Form_User_SignIn {
 		margin: 0 auto;
-		padding: 0 15px;
+		padding: 0;
 		max-width: 350px;
 		a.ForgotPassword {
 			float: right;
@@ -790,9 +838,12 @@
 		}
 	}
 	
-	#Popup .SingleEntryMethod #Form_User_Password {
+	.SingleEntryMethod #Form_User_Password,
+	.MultipleEntryMethods #Form_User_Password,
+	#Popup .SingleEntryMethod #Form_User_Password,
+	#Popup .MultipleEntryMethods #Form_User_Password {
 		margin: 0 auto;
-		padding: 0 15px;
+		padding: 0;
 		max-width: 350px;
 		.btn {
 			.box-sizing(border-box);
@@ -809,13 +860,19 @@
 	// Multiple Entry Sign-in
 	// ----------------------------------------------------------------------------------------------- //
 	
-	#Popup .SingleEntryMethod {
-	}
-	
-	#Popup .SingleEntryMethod #Form_User_SignIn {
-	}
-	
-	#Popup .SingleEntryMethod #Form_User_Password {
+	.MultipleEntryMethods .Methods {
+		margin: 0 auto;
+		max-width: 350px;
+		.Method {
+			width: 50%;
+			min-width: 155px;
+			display: inline-block;
+			.box-sizing(border-box);
+		}
+		b {
+			display: inline-block;
+			margin-bottom: 9px;
+		}
 	}
 	
 	// Registration
@@ -836,6 +893,65 @@
 			.border-radius(5px);
 		}
 	}
+	
+
+// Mobile Styles
+// --------------------------------------------------------------------------------------------------- //
+
+	@media (max-width: 480px) {
+		body {
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		.navbar-fixed-top,
+		.navbar-fixed-bottom,
+		.jumbotron,
+		.bs-docs-social {
+			margin-left: -5px;
+			margin-right: -5px;
+		}
+		footer {
+			display: none;
+		}
+		.modal {
+			height: 500px; // Set a default max height of the modal (adjusted later)
+			position: fixed; // Display modal in the centre of your screen
+			overflow-y: scroll; //	Ensure that the modal is scroll-able
+			-webkit-overflow-scrolling: touch; // Avoid having to use 2 finger scroll on iOS
+		}
+		.modal.fade.in{
+			top: 5px; // Use more screen real estate
+		}
+		.modal-body{
+			// Increase the max height of the modal body to try & avoid both it,
+			// and the modal container having scroll bars which results in odd behavior
+			max-height: 2400px; 
+		}	
+	}
+	
+	@media (max-width: 480px) {
+		
+		// Hide Elements
+		.CommentForm .Buttons > a, .PageControls .BoxNewDiscussion, .BlockColumn-User, .DraftButton,
+		.PreviewButton, .DataTable .Category, .HomepageTitle, .AlertMessage, .CasualMessage, 
+		.InfoMessage, .WarningMessage {
+			display: none;
+			visibility: hidden;
+		}
+	
+	}
+	
+	// Now adjust the height so it handles various screen sizes & orientations
+	// You could make this as granular as you like, or have it more granular at common screen sizes
+	// but it should start at the height we set on .modal (i.e. 500px) & work down
+	@media (max-width: 480px) and (max-height: 500px){.modal{ height: 450px}}
+	@media (max-width: 480px) and (max-height: 450px){.modal{ height: 400px}}
+	@media (max-width: 480px) and (max-height: 400px){.modal{ height: 350px}}
+	@media (max-width: 480px) and (max-height: 350px){.modal{ height: 300px}}
+	@media (max-width: 480px) and (max-height: 300px){.modal{ height: 250px}}
+	@media (max-width: 480px) and (max-height: 250px){.modal{ height: 200px}}
+	@media (max-width: 480px) and (max-height: 200px){.modal{ height: 150px}}
+	
 	
 
 // Custom LESS and external stylesheets
