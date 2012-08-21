@@ -31,16 +31,30 @@
 // Basic HTML Elements
 // --------------------------------------------------------------------------------------------------- //
 	
-	* { -webkit-font-smoothing: antialiased; font-smoothing: always; }
+	* {
+		-webkit-font-smoothing: antialiased;
+		font-smoothing: always;
+	}
 	
-	a:hover { text-decoration: none; }
+	a:hover {
+		text-decoration: none;
+	}
 	
-	ol, ul { margin: 0; }
+	ol, ul {
+		margin: 0;
+	}
 	
-	h1, h2, h3, h4, h5, h6 { font-weight: 300; }
-	h1.H { margin-top: 0; }
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 300;
+	}
 	
-	form { margin: 0; }
+	h1.H {
+		margin-top: 0;
+	}
+	
+	form {
+		margin: 0;
+	}
 
 
 // Buttons, Inputs and Textareas
@@ -49,41 +63,81 @@
 	// Basic Buttons
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.BigButton.btn { display: block; font-size: 18px; padding: 10px 14px; font-weight: normal;
-	margin-bottom: 10px; }
+	.BigButton.btn {
+		display: block;
+		padding: 10px 14px;
+		margin-bottom: 10px;
+		font-size: 18px;
+		font-weight: normal;
+	}
 	
 	// Grouped Buttons
 	// ----------------------------------------------------------------------------------------------- //
 	
 	.ButtonGroup {
-		.btn { .box-sizing(border-box); height: 30px; }
-		.btn:first-child { display: block; margin-right: 25px; }
-		.Handle { width: 26px; max-width: 26px; margin-top: -30px; float: right; }
+		.btn {
+			height: 30px;
+			.box-sizing(border-box);
+			&:first-child {
+				display: block;
+				margin-right: 25px;
+			}
+		}
+		.Handle {
+			float: right;
+			width: 26px;
+			max-width: 26px;
+			margin-top: -30px;
+		}
 		&.Big {
-			.btn { font-weight: bold; }
-			.Dropdown { .box-sizing(border-box); width: 100%; }
+			.btn {
+				font-weight: bold;
+			}
+			.Dropdown {
+				width: 100%;
+				.box-sizing(border-box);
+			}
 		}
 	}
 	
 	// Inputs and textareas
 	// ----------------------------------------------------------------------------------------------- //
 	
-	input, textarea { .box-sizing(border-box);
-		&:focus { background-color: @bodyBackground; }
-		&.DateBox, &.InputBox, &.SmallInput, textarea { font-family: @sansFontFamily; }
+	input, textarea {
+		.box-sizing(border-box);
+		&:focus {
+			background-color: @bodyBackground; }
+		&.DateBox,
+		&.InputBox,
+		&.SmallInput,
+		textarea {
+			font-family: @sansFontFamily;
+		}
 	}
 	
-	input { min-height: 30px;
-		&.InputBox:focus { background-color: @bodyBackground; }
+	input {
+		min-height: 30px;
+		&.InputBox:focus {
+			background-color: @bodyBackground;
+		}
 	}
 	
-	.TextBoxWrapper { padding-right: 0; }
+	.TextBoxWrapper {
+		padding-right: 0;
+	}
 	
 	// Labels
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.CheckBoxLabel { display: inline-block; padding-top: 5px; margin: 0 10px 0 0; vertical-align: middle;
-		input { float: left; margin-right: 5px; }
+	.CheckBoxLabel {
+		display: inline-block;
+		padding-top: 5px;
+		margin: 0 10px 0 0;
+		vertical-align: middle;
+		input {
+			float: left;
+			margin-right: 5px;
+		}
 	}
 
 // Main Navigation
@@ -91,23 +145,42 @@
 	
 	.navbar-fixed-top {
 		a {
-			i { .opacity(50); }
-			&:hover i { .opacity(100); }
+			i {
+				.opacity(50);
+			}
+			&:hover i {
+				.opacity(100);
+			}
 		}
-		.search-query { min-width: 260px; }
+		.search-query {
+			min-width: 260px;
+		}
 	}
 	
 	
 // Subheader Content
 // --------------------------------------------------------------------------------------------------- //
 
-	.bs-docs-social { text-align: left; padding: 0; 
-		.Breadcrumbs { display: inline-block; padding: 9px 0 11px; text-shadow: 0 1px 0 @white;
-			.Crumb { .hide-text; padding: 0 5px;
-			&:after { font-family: @sansFontFamily; color: @grayLight; font-size: 14px;
-				content: "/ "; }
+	.bs-docs-social {
+		padding: 0; 
+		text-align: left;
+		.Breadcrumbs {
+			display: inline-block;
+			padding: 9px 0 11px;
+			text-shadow: 0 1px 0 @white;
+			.Crumb {
+				padding: 0 5px;
+				.hide-text;
+				&:after {
+					color: @grayLight;
+					font-family: @sansFontFamily;
+					font-size: 14px;
+					content: "/ ";
+				}
 			}
-			.CrumbLabel:last-child a { color: @grayLight; }
+			.CrumbLabel:last-child a {
+				color: @grayLight;
+			}
 		}
 	}
 
@@ -115,108 +188,197 @@
 // Main Container
 // --------------------------------------------------------------------------------------------------- //
 	
-	body > .bs-docs-canvas > .container { padding-top: 20px; }
+	body > .bs-docs-canvas > .container {
+		padding-top: 20px;
+	}
 
 
 // Content Pane
 // --------------------------------------------------------------------------------------------------- //
 	
-	#content .BoxFilter { display: none; }
+	#content .BoxFilter {
+		display: none;
+	}
 	
 	// Discussions
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.Discussion .PageTitle h1 { margin-top: 0; margin-bottom: 0; }
-	
-	.DiscussionHeader { margin-bottom: 0; }
-	
-	.ItemDiscussion { padding: 8px 0;
-		.Meta { overflow: auto; }
-		.Message { font-size: 100%; padding-top: 5px; }
+	.Discussion .PageTitle h1 {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 	
-	h2.CommentHeading, .MessageForm h2 { font-size: 24px; line-height: 1.2; }
+	.DiscussionHeader {
+		margin-bottom: 0;
+	}
 	
-	.MessageList .Message { padding-top: 0; margin-top: 8px; }
+	.ItemDiscussion {
+		padding: 8px 0;
+		.Message {
+			font-size: 100%;
+			padding-top: 5px;
+		}
+	}
 	
-	.Category label { display: inline; }
+	h2.CommentHeading,
+	.MessageForm h2 {
+		font-size: 24px;
+		line-height: 1.2;
+	}
+	
+	.MessageList .Message {
+		padding-top: 0;
+		margin-top: 8px;
+	}
+	
+	.Category label {
+		display: inline;
+	}
 	
 	// Data Tables
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.DataTable { margin-top: 10px; margin-bottom: 10px;
-		thead td { vertical-align: middle; border-top: 1px solid lighten(@tableBorder, 6%);
-		border-bottom: 1px solid lighten(@tableBorder, 6%); padding: 8px 4px; }
-		tbody .BlockColumn { padding: 12px 4px; }
-		td { vertical-align: middle; border-bottom: 1px solid lighten(@tableBorder, 6%);
-			.Wrap { position: relative; .box-sizing(border-box);
-				.Options { height: 1px; }
+	.DataTable {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		thead td {
+			padding: 8px 4px;
+			vertical-align: middle;
+			border-top: 1px solid lighten(@tableBorder, 6%);
+			border-bottom: 1px solid lighten(@tableBorder, 6%);
+		}
+		tbody .BlockColumn {
+			padding: 12px 4px;
+		}
+		td {
+			vertical-align: middle;
+			border-bottom: 1px solid lighten(@tableBorder, 6%);
+			.Wrap {
+				position: relative;
+				.box-sizing(border-box);
+				.Options {
+					height: 1px;
+				}
 			}
 		}
-		&.CategoryTable tbody td { vertical-align: middle; }
+		&.CategoryTable tbody td {
+			vertical-align: middle;
+		}
 		.Item {
-			&.Read { background: transparent; }
+			&.Read {
+				background: transparent;
+			}
 		}
 	}
 
 	// Data and Message Lists
 	// ----------------------------------------------------------------------------------------------- //
 
-	.DataList { margin-top: 10px; margin-bottom: 10px;
-		&.Comments .Item { padding: 15px 0px;
-			.Message { margin: 10px 0 0; }
+	.DataList {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		&.Comments .Item {
+			padding: 15px 0px;
+			.Message {
+				margin: 10px 0 0;
+			}
 		}
 		.Item {
-			&.Activity { padding: 15px 0; }
-			&.Read { background: transparent; }
-			&:first-child { border-top-width: 1px; }
+			&.Activity {
+				padding: 15px 0;
+			}
+			&.Read {
+				background: transparent;
+			}
+			&:first-child {
+				border-top-width: 1px;
+			}
 		}
-		.Item-Header { overflow: auto; margin-bottom: 10px; }
-		.Meta { overflow: auto; }
+		.Item-Header {
+			overflow: auto;
+			margin-bottom: 10px;
+		}
+		.Meta {
+			overflow: auto;
+		}
 	}
 	
 	.MessageList {
-		.Item-Header { overflow: auto; margin-bottom: 10px; }
-		.Item { padding: 15px 0; }
+		.Item-Header {
+			overflow: auto;
+			margin-bottom: 10px;
+		}
+		.Item {
+			padding: 15px 0;
+		}
 	}
 	
 	// Category Tables
 	// ----------------------------------------------------------------------------------------------- //
 	
 	.CategoryTable {
-		h2 { font-size: 18px; }
-		.CategoryDescription { margin-bottom: 10px; }
+		h2 {
+			font-size: 18px;
+		}
+		.CategoryDescription {
+			margin-bottom: 10px;
+		}
 	}
 	
-	.PageDescription { margin: 15px 0;
-		&:empty { display: none; }
+	.PageDescription {
+		margin: 15px 0;
+		&:empty {
+			display: none;
+		}
 	}
 	
-	.PageControls:empty { display: none; }
+	.PageControls:empty {
+		display: none;
+	}
 	
 	.ChildCategoryList {
-		.Item { padding: 0; }
-		&:nth-child(2) { border-top-width: 1px; }
-		.ItemContent { padding: 8px 0; }
+		.Item {
+			padding: 0;
+		}
+		&:nth-child(2) {
+			border-top-width: 1px;
+		}
+		.ItemContent {
+			padding: 8px 0;
+		}
 	}
 	
 	// Leave a Comment
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.CommentForm .FormWrapper { padding: 0 0 0 50px; background: transparent; }
+	.CommentForm .FormWrapper {
+		padding: 0 0 0 50px;
+		background: transparent;
+	}
 	
-	.Form-Header .Author .PhotoWrap { margin: 0; }
+	.Form-Header .Author .PhotoWrap {
+		margin: 0;
+	}
 	
-	.MarkupHelp { color: rgba(0,0,0,.5); margin-right: 15px; line-height: 2.2; }
+	.MarkupHelp {
+		margin-right: 15px;
+		line-height: 2.2;
+		color: rgba(0,0,0,.5);
+	}
 	
-	.Buttons { line-height: 30px;
-		.btn { vertical-align: top; }
+	.Buttons {
+		line-height: 30px;
+		.btn {
+			vertical-align: top;
+		}
 	}
 	
 	// New Discussion
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.DiscussionForm .PostOptions label { display: inline-block; }
+	.DiscussionForm .PostOptions label {
+		display: inline-block;
+	}
 		
 	// Options Menus
 	// ----------------------------------------------------------------------------------------------- //
@@ -224,53 +386,107 @@
 	.OptionsMenu {
 		font-size: 100%;
 	}
-	.OptionsMenu .Flyout { right: -5px; left: auto;
-		&:before, &:after { right: 10px; }
-		&:before { border-bottom: 7px solid #CCC; }
+	.OptionsMenu .Flyout {
+		right: -5px;
+		left: auto;
+		&:before,
+		&:after {
+			right: 10px;
+		}
+		&:before {
+			border-bottom: 7px solid #CCC;
+		}
 	}
 	
 	// Profile Page
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.Photo .ProfilePhotoLarge { width: 100%; .box-sizing(border-box); }
+	.Photo .ProfilePhotoLarge {
+		width: 100%;
+		.box-sizing(border-box);
+	}
 	
-	.Thumbnail img { max-width: inherit; }
+	.Thumbnail img {
+		max-width: inherit;
+	}
 	
-	.ProfileOptions .btn { vertical-align: top; }
+	.ProfileOptions .btn {
+		vertical-align: top;
+	}
 	
-	table.PreferenceGroup, .Info { width: 100% !important; .box-sizing(border-box); }
+	table.PreferenceGroup, .Info {
+		width: 100% !important;
+		.box-sizing(border-box);
+	}
 	
 	// Search Page
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.SearchForm { background: rgba(0,0,0,0.05); .border-radius(4px); margin-top: 0; padding: 10px;
-		form { margin-bottom: 0; }
-		.SiteSearch { max-width: 100%; }
-		input.InputBox { margin: 0; padding-right: 77px; .border-radius(3px); }
-		input.btn { float: right; width: 70px; position: relative; margin-top: -30px;
-		.border-radius(0 3px 3px 0); }
+	.SearchForm {
+		margin-top: 0;
+		padding: 10px;
+		background: rgba(0,0,0,0.05);
+		.border-radius(4px);
+		form {
+			margin-bottom: 0;
+		}
+		.SiteSearch {
+			max-width: 100%;
+		}
+		input.InputBox {
+			margin: 0;
+			padding-right: 77px;
+			.border-radius(3px);
+		}
+		input.btn {
+			float: right;
+			width: 70px;
+			position: relative;
+			margin-top: -30px;
+			.border-radius(0 3px 3px 0);
+		}
 	}
 	
 	// Messages Page
 	// ----------------------------------------------------------------------------------------------- //
 	
-	textarea.MultiComplete { height: 30px; }
+	textarea.MultiComplete {
+		height: 30px;
+	}
 	
-	.ac_results { width: auto !important; border: none; background: none; overflow: visible;
-		ul { display: block; position: relative; margin-top: 2px; padding: 5px 0; 
-			li { padding: 3px 20px; font-size: 100%; line-height: 20px; border-bottom: none; }
+	.ac_results {
+		width: auto !important;
+		border: none;
+		background: none;
+		overflow: visible;
+		ul {
+			display: block;
+			position: relative;
+			margin-top: 2px;
+			padding: 5px 0; 
+			li {
+				padding: 3px 20px;
+				font-size: 100%;
+				line-height: 20px;
+				border-bottom: none; }
 		}
-		strong { background: none; }
-		.ac_over { color: @dropdownLinkColorHover;
+		strong {
+			background: none; }
+		.ac_over {
+			color: @dropdownLinkColorHover;
 			background-color: @dropdownLinkBackgroundHover;
 			#gradient > .vertical(@dropdownLinkBackgroundHover,
-			darken(@dropdownLinkBackgroundHover, 5%)); }
+			darken(@dropdownLinkBackgroundHover, 5%));
+		}
 	}
 	
 	// Pagination
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.Pager a, .Pager span { margin: 0; }
+	.Pager a,
+	.Pager span {
+		margin: 0;
+	}
 	
 	
 // Sidebar Pane
@@ -279,91 +495,218 @@
 	// Profile Menu
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.MeBox { display: inline-block; margin: 0;
-		.WhoIs, .Username, .MeMenu { display: inline-block; }
-		.Username { padding: 10px 8px 11px; }
-		.MeMenu { padding: 8px; }
-		.ProfilePhoto { width: 28px; height: 28px; margin-top: 6px; .border-radius(2px); }
-		.Flyout { left: inherit; right: -4px; .box-sizing(border-box);
-			ul { line-height: 20px; }
-			&.FlyoutMenu { padding: 0; .border-radius(3px);
-				a { padding: 0; clear: none; display: inline-block; }
-				a:hover { background: none; color: @linkColorHover; }
-				.PopList .Center { border-bottom: none;
-					a { padding: 6px; display: block; }
-				}
-				.ProfilePhoto { margin-top: 0; width: 34px; height: 34px; }
+	.MeBox {
+		display: inline-block;
+		margin: 0;
+		.WhoIs,
+		.Username,
+		.MeMenu {
+			display: inline-block;
+		}
+		.Username {
+			padding: 10px 8px 11px;
+		}
+		.MeMenu {
+			padding: 8px;
+		}
+		.ProfilePhoto {
+			width: 28px;
+			height: 28px;
+			margin-top: 6px;
+			.border-radius(2px);
+		}
+		.Flyout {
+			left: inherit;
+			right: -4px;
+			.box-sizing(border-box);
+			ul {
+				line-height: 20px;
 			}
-			&:before, &:after { right: 9px; left: auto; }
-			&:before { border-bottom: 7px solid #CCC; }
+			&.FlyoutMenu {
+				padding: 0;
+				.border-radius(3px);
+				a {
+					padding: 0;
+					clear: none;
+					display: inline-block;
+				}
+				a:hover {
+					background: none;
+					color: @linkColorHover;
+				}
+				.PopList .Center {
+					border-bottom: none;
+					a {
+						padding: 6px;
+						display: block;
+					}
+				}
+				.ProfilePhoto {
+					margin-top: 0;
+					width: 34px;
+					height: 34px;
+				}
+			}
+			&:before,
+			&:after {
+				right: 9px;
+				left: auto;
+			}
+			&:before {
+				border-bottom: 7px solid #CCC;
+			}
 		}
 	}
-	.Profile .MeBox { display: inline-block; }
-	.MeBox-SignIn { display: none !important; }
+	
+	.Profile .MeBox {
+		display: inline-block;
+	}
+	
+	.MeBox-SignIn {
+		display: none !important;
+	}
 	
 	// Filter Menu
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.FilterMenu { margin: 20px 0;
-		.Aside { float: right; }
-		i:before { font-weight: bold; }
+	.FilterMenu {
+		margin: 20px 0;
+		.Aside {
+			float: right;
+		}
+		i:before {
+			font-weight: bold;
+		}
 	}
 	
 	// Panel Panes
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.Box { margin: 15px 0;
-		h4 { border-bottom: 1px solid rgba(0,0,0,.05); padding-bottom: 5px; margin-bottom: 10px;
-		margin-top: 0; }
-		&.GuestBox { margin-top: 0; }
+	.Box {
+		margin: 15px 0;
+		h4 {
+			border-bottom: 1px solid rgba(0,0,0,.05);
+			padding-bottom: 5px;
+			margin-bottom: 10px;
+			margin-top: 0;
+		}
+		&.GuestBox {
+			margin-top: 0;
+		}
 	}
 	
-	.PanelInfo { padding: 0 15px;
-		> li { border-bottom: none; margin: 0 -15px; padding: 3px 15px;
-			&:first-child { border-top: none; }
-			&:hover { background: rgba(0,0,0,0.07); }
-			&.Active { background-color: @linkColor;
-				> a, strong a { color: @white; font-weight: normal;
-				text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2); }
+	.PanelInfo {
+		padding: 0 15px;
+		> li {
+			border-bottom: none;
+			margin: 0 -15px;
+			padding: 3px 15px;
+			&:first-child {
+				border-top: none;
+			}
+			&:hover {
+				background: rgba(0,0,0,0.07);
+			}
+			&.Active {
+				background-color: @linkColor;
+				> a,
+				strong a {
+					color: @white;
+					font-weight: normal;
+					text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+				}
 			}
 		}
 	}
 	
-	.PanelCategories .Depth2 { padding-left: 15px + 4px * 0; }
-	.PanelCategories .Depth3 { padding-left: 15px + 4px * 1; }
-	.PanelCategories .Depth4 { padding-left: 15px + 4px * 2; }
-	.PanelCategories .Depth5 { padding-left: 15px + 4px * 3; }
-	.PanelCategories .Depth6 { padding-left: 15px + 4px * 4; }
-	.PanelCategories .Depth7 { padding-left: 15px + 4px * 5; }
-	.PanelCategories .Depth8 { padding-left: 15px + 4px * 6; }
-	.PanelCategories .Depth9 { padding-left: 15px + 4px * 7; }
-	.PanelCategories .Depth10 { padding-left: 15px + 4px * 8; }
-	.PanelCategories .Depth11 { padding-left: 15px + 4px * 9; }
-	.PanelCategories .Depth12 { padding-left: 15px + 4px * 10; }
+	.PanelCategories {
+		.Depth2 {
+			padding-left: 15px + 4px * 0;
+		}
+		.Depth3 {
+			padding-left: 15px + 4px * 1;
+		}
+		.Depth4 {
+			padding-left: 15px + 4px * 2;
+		}
+		.Depth5 {
+			padding-left: 15px + 4px * 3;
+		}
+		.Depth6 {
+			padding-left: 15px + 4px * 4;
+		}
+		.Depth7 {
+			padding-left: 15px + 4px * 5;
+		}
+		.Depth8 {
+			padding-left: 15px + 4px * 6;
+		}
+		.Depth9 {
+			padding-left: 15px + 4px * 7;
+		}
+		.Depth10 {
+			padding-left: 15px + 4px * 8;
+		}
+		.Depth11 {
+			padding-left: 15px + 4px * 9;
+		}
+		.Depth12 {
+			padding-left: 15px + 4px * 10;
+		}
+	}
 	
 
 // Modal Windows
 // --------------------------------------------------------------------------------------------------- //
 	
-	.Loading { width: 40px; margin: 0 auto; }
-	
-	.Overlay { background-color: rgba(0,0,0,.8); }
-	
-	#Popup {
-		.Border { padding: 0; }
-		.Body { padding: 0; }
-		.modal-header { margin: 0; }
-		.modal-body { padding: 15px; }
-		.Content {
-			.modal-header { font-size: 24px; font-weight: bold; line-height: 40px; margin-bottom: 0; }
-		}
-		.Footer { .modal-footer; }
-		a.Close { top: 12px; right: 15px; }
-		.close { font-size: 22px; }
-		p:not(.modal-body) { padding: 0; }
+	.Loading {
+		width: 40px;
+		margin: 0 auto;
 	}
 	
-	.Buttons-Confirm { text-align: left; }	
+	.Overlay {
+		background-color: rgba(0,0,0,.8);
+	}
+	
+	#Popup {
+		.Border {
+			padding: 0;
+		}
+		.Body {
+			padding: 0;
+		}
+		.modal-header {
+			margin: 0;
+		}
+		.modal-body {
+			padding: 15px;
+		}
+		.Content {
+			.modal-header {
+				font-size: 24px;
+				font-weight: bold;
+				line-height: 40px;
+				margin-bottom: 0;
+			}
+		}
+		.Footer {
+			.modal-footer;
+		}
+		a.Close {
+			top: 12px;
+			right: 15px;
+		}
+		.close {
+			font-size: 22px;
+		}
+		p:not(.modal-body) {
+			padding: 0;
+		}
+	}
+	
+	.Buttons-Confirm {
+		text-align: left;
+	}	
 
 // Alerts
 // --------------------------------------------------------------------------------------------------- //
@@ -372,11 +715,18 @@
 	// ----------------------------------------------------------------------------------------------- //
 	
 	#bootstrap-container, #Popup {
-		.Errors ul, .Warning { padding: 8px 35px 8px 14px; margin-bottom: @baseLineHeight; 
-		text-shadow: 0 1px 0 rgba(255,255,255,.5) !important;
-		background-color: @errorBackground !important; border: 1px solid @errorBorder !important;
-		.border-radius(4px) !important; color: @errorText !important; 
-			li { background-color: transparent !important; color: @errorText !important; }
+		.Errors ul, .Warning {
+			padding: 8px 35px 8px 14px;
+			margin-bottom: @baseLineHeight; 
+			text-shadow: 0 1px 0 rgba(255,255,255,.5) !important;
+			background-color: @errorBackground !important;
+			border: 1px solid @errorBorder !important;
+			.border-radius(4px) !important;
+			color: @errorText !important; 
+			li {
+				background-color: transparent !important;
+				color: @errorText !important;
+			}
 		}
 	}
 
@@ -387,27 +737,73 @@
 	// ----------------------------------------------------------------------------------------------- //
 	
 	#Popup .SingleEntryMethod {
-		input { max-width: 100%; width: 100%; margin-bottom: 0;
-			&[type="password"] { margin-bottom: 0; padding-right: 77px; }
-			&[type="checkbox"] { width: auto;  float: left; margin: 0 5px 0 0; height: 30px; }
+		input {
+			max-width: 100%;
+			width: 100%;
+			margin-bottom: 0;
+			&[type="password"] {
+				margin-bottom: 0;
+				padding-right: 77px;
+			}
+			&[type="checkbox"] {
+				width: auto;
+				float: left;
+				margin: 0 5px 0 0;
+				height: 30px;
+			}
 		}
-		label { margin-bottom: 9px; }
-		.CheckBoxLabel { display: inline-block; margin: 0; line-height: 30px; }
-		li { clear: both; }
-		input.btn { width: auto; float: right; }
-		.Buttons { width: 100%; line-height: 30px; margin-top: 9px; }
+		label {
+			margin-bottom: 9px;
+		}
+		.CheckBoxLabel {
+			display: inline-block;
+			margin: 0;
+			line-height: 30px;
+		}
+		li {
+			clear: both;
+		}
+		input.btn {
+			width: auto;
+			float: right;
+		}
+		.Buttons {
+			width: 100%;
+			line-height: 30px;
+			margin-top: 9px;
+		}
 	}
 	
-	#Popup .SingleEntryMethod #Form_User_SignIn { margin: 0 auto; padding: 0 15px; max-width: 350px;
-		a.ForgotPassword { float: right; position: relative; margin-top: -30px;
-		.border-radius(0 3px 3px 0); }
-		.CreateAccount { clear: both; color: rgba(0,0,0,.5); }
+	#Popup .SingleEntryMethod #Form_User_SignIn {
+		margin: 0 auto;
+		padding: 0 15px;
+		max-width: 350px;
+		a.ForgotPassword {
+			float: right;
+			position: relative;
+			margin-top: -30px;
+			.border-radius(0 3px 3px 0);
+		}
+		.CreateAccount {
+			clear: both;
+			color: rgba(0,0,0,.5);
+		}
 	}
 	
-	#Popup .SingleEntryMethod #Form_User_Password {  margin: 0 auto; padding: 0 15px; max-width: 350px;
-		.btn { .box-sizing(border-box); }
-		.Buttons { overflow: auto; }
-		a.ForgotPassword { margin-left: 0; float: left; }
+	#Popup .SingleEntryMethod #Form_User_Password {
+		margin: 0 auto;
+		padding: 0 15px;
+		max-width: 350px;
+		.btn {
+			.box-sizing(border-box);
+		}
+		.Buttons {
+			overflow: auto;
+		}
+		a.ForgotPassword {
+			margin-left: 0;
+			float: left;
+		}
 	}
 	
 	// Multiple Entry Sign-in
@@ -426,10 +822,19 @@
 	// ----------------------------------------------------------------------------------------------- //
 	
 	.Entry.register #content {
-		input { width: 100%; 
-			&[type="radio"], &[type="checkbox"] { width: auto; height: 18px; margin-right: 5px; }
+		input {
+			width: 100%; 
+			&[type="radio"],
+			&[type="checkbox"] {
+				width: auto;
+				height: 18px;
+				margin-right: 5px;
+			}
 		}
-		.FormWrapper { padding: 15px 25px; .border-radius(5px); }
+		.FormWrapper {
+			padding: 15px 25px;
+			.border-radius(5px);
+		}
 	}
 	
 
