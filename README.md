@@ -94,7 +94,7 @@ There are no extra styles needed for the Page Speed plugin to work - there are h
 
 #### Incompatibilities
 
-*_Please note, that there are a **few** plugins that VanillaBootstrap is **NOT** compatible with. So far, these can be listed:_
+_Please note, that there are a **few** plugins that VanillaBootstrap is **NOT** compatible with. So far, these can be listed:_
 
 - __Buttons__ by Mark O'Sullivan - VanillaBootstrap already takes care of button coloring.
 - __Chosen Category__ by myself - VanillaBootstrap includes a custom version of Chosen Category.
