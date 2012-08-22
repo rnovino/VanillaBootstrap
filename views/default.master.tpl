@@ -174,8 +174,8 @@
 	// Fix an annoying bug
 	$('body').removeClass('thumbnail');
 	
-	// Lazy load all images
-	$('img').each(function() {
+	// Lazy load images
+	$('img:not(#cropbox)').each(function() {
 		$(this).attr('data-original', $(this).attr('src'));
 		$(this).attr('src', 'http://placehold.it/1x1');
 	});
