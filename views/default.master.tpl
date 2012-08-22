@@ -172,22 +172,9 @@
 	
 	// Buttons
 	$('.Button').toggleClass('Button btn');
-	$('.Button').livequery(function() {
-		$(this).toggleClass('Button btn');
-	});
 	$('a.Cancel, .Danger').addClass('btn btn-danger');
-	$('a.Cancel').livequery(function() { $(this).addClass('btn btn-danger'); });
-	$('.Cancel').find('a').livequery(function() {
-		$(this).addClass('btn btn-danger');
-	});
 	$('.NavButton').toggleClass('NavButton btn');
 	$('.NewDiscussion').addClass('btn-primary');
-	$('.ForgotPassword').livequery(function() {
-		$(this).addClass('btn btn-danger');
-	});
-	$('.Primary.btn, .DiscussionButton').livequery(function() { 
-		$(this).addClass('btn-primary');
-	});
 	$('.ButtonGroup.Big .btn').addClass('btn-large');
 	
 	// Checkboxes and radio buttons
@@ -206,9 +193,6 @@
 	$('.WarningMessage').addClass('alert alert-danger');
 	
 	// Pagination
-	$('.MorePager').livequery(function() {
-		$(this).find('a').addClass('btn btn-small btn-block');
-	});
 	$('.NumberedPager').each(function() {
 		$(this).addClass('btn-group');
 		$(this).find('a, span').addClass('btn btn-small');
@@ -217,26 +201,13 @@
 	
 	// Flyout Menus
 	$('.MenuItems').toggleClass('MenuItems dropdown-menu');
-	$('.MenuItems').livequery(function() {
-		$(this).toggleClass('MenuItems dropdown-menu');
-	});
 	$('.FlyoutMenu').addClass('dropdown-menu');
-	$('.FlyoutMenu').livequery(function() {
-		$(this).addClass('dropdown-menu');
-	});
-	$('.ac_results').livequery(function() {
-		$(this).find('ul').addClass('typeahead dropdown-menu');
-	});
 	
 	// Navigation
 	$('.navbar form').each(function() {
 		$(this).addClass('navbar-search pull-left');
 		$(this).find('input').addClass('search-query span2').attr('placeholder','Search...');
 		$(this).find('input[type="submit"]').remove();
-	});
-	$('.dropdown-menu ul li hr').livequery(function() {
-		$(this).parent().addClass('divider');
-		$(this).remove();
 	});
 	$('.FilterMenu, .PanelInfo').each(function() {
 		$(this).addClass('nav nav-list');
@@ -258,21 +229,12 @@
 		$(this).find('.Aside:empty, .badge:empty').remove();
 	});
 	
-	// Modals
-	$('.Popup').livequery(function() { $(this).find('.Body').addClass('modal'); });
-	$('.Popup h1, .Popup h2').livequery(function() { $(this).addClass('modal-header'); });
-	$('.Popup .Content .MainForm, .Popup .Content .Legal, .Popup .Content > form, .Popup .Content > p, .Popup .Content .Methods').livequery(function() { $(this).addClass('modal-body'); });
-	$('.Popup .Footer span').livequery(function() { $(this).addClass('close'); });
-	
 	// Grouped Buttons
 	$('.ButtonGroup').each(function() {
 		$(this).addClass('btn-group');
 		$(this).find('.btn').addClass('btn-primary');
 		$(this).find('.Handle').each(function() {
 			$(this).addClass('dropdown-toggle').append('<span class="caret"></span>');
-		});
-		$(this).livequery(function() {
-			$(this).find('.Dropdown').addClass('dropdown-menu');
 		});
 	});
 	$(document).delegate('.ButtonGroup > .Handle', 'click', function() {

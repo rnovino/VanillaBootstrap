@@ -89,13 +89,10 @@ The Tagging plugin can be completely integrated with VanillaBootstrap by adding 
 
 to the file `class.tagging.plugin.php` around line `420`. This will ensure that the `tokeninput` plugin doesn't utilize its default styling but instead uses the Bootstrap theme that comes bundled with VanillaBootstrap and that the autocomplete dropdown won't behave strangely.
 
-#### Page Speed
-
-There are no extra styles needed for the Page Speed plugin to work - there are however some steps you _must_ follow unless you want to end up seeing a blank page. Don't worry, it's dead simple! First off, when using the Page Speed plugin with VanillaBootstrap the option `Defer Javascript` must always the set to `disable`. Secondly, you'll need to set your jQuery version to _**at least**_ the latest version - the same goes for jQuery UI. You can find the latest versions here https://developers.google.com/speed/libraries/devguide#jquery (jQuery UI is found just beneath jQuery).
-
 #### Incompatibilities
 
 _Please note, that there are a **few** plugins that VanillaBootstrap is **NOT** compatible with. So far, these can be listed:_
 
+- __Page Speed__ by S - This plugin causes the .livequery() functions to bug.
 - __Buttons__ by Mark O'Sullivan - VanillaBootstrap already takes care of button coloring.
 - __Chosen Category__ by myself - VanillaBootstrap includes a custom version of Chosen Category.
