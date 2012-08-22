@@ -109,7 +109,7 @@
 	input, textarea {
 		.box-sizing(border-box);
 		&:focus {
-			background-color: @bodyBackground; }
+			background-color: @inputBackground; }
 		&.DateBox,
 		&.InputBox,
 		&.SmallInput,
@@ -121,7 +121,7 @@
 	input {
 		height: auto !important;
 		&.InputBox:focus {
-			background-color: @bodyBackground;
+			background-color: @inputBackground;
 		}
 		&.search-query {
 			min-height: 30px;
@@ -506,6 +506,12 @@
 		}
 	}
 	
+	.Conversation {
+		.Item:first-child {
+			border-top: none;
+		}
+	}
+	
 	// Pagination
 	// ----------------------------------------------------------------------------------------------- //
 	
@@ -607,9 +613,6 @@
 		i:before {
 			font-weight: bold;
 		}
-		.Count {
-			background: @linkColor;
-		}
 		.active {
 			.Count {
 				background: none;
@@ -634,67 +637,63 @@
 	}
 	
 	.PanelInfo {
-		padding: 0 15px;
 		> li {
-			border-bottom: none;
-			margin: 0 -15px;
-			padding: 3px 15px;
+			border: none;
+			margin: 0;
+			padding: 0;
 			&:first-child {
-				border-top: none;
+				border: none;
 			}
-			&:hover {
-				background: rgba(0,0,0,0.07);
-			}
-			.Count {
-				background: @linkColor;
-			}
-			&.Active {
-				background-color: @linkColor;
-				> a,
-				strong a {
-					color: @white;
-					font-weight: normal;
-					text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-				}
+			&.active {
 				.Count {
 					background: none;
 				}
 			}
 		}
+		.ProfilePhotoSmall {
+			float: left;
+			margin-right: 10px;
+			width: 20px;
+			height: 20px;
+		}
 	}
 	
 	.PanelCategories {
-		.Depth2 {
+		.Depth2, .Depth3, .Depth4, .Depth5, .Depth6,
+		.Depth7, .Depth8, .Depth9, .Depth10, .Depth11, .Depth12 {
+			padding-left: 0;
+		} 
+		.Depth2 a {
 			padding-left: 15px + 4px * 0;
 		}
-		.Depth3 {
+		.Depth3 a {
 			padding-left: 15px + 4px * 1;
 		}
-		.Depth4 {
+		.Depth4 a {
 			padding-left: 15px + 4px * 2;
 		}
-		.Depth5 {
+		.Depth5 a {
 			padding-left: 15px + 4px * 3;
 		}
-		.Depth6 {
+		.Depth6 a {
 			padding-left: 15px + 4px * 4;
 		}
-		.Depth7 {
+		.Depth7 a {
 			padding-left: 15px + 4px * 5;
 		}
-		.Depth8 {
+		.Depth8 a {
 			padding-left: 15px + 4px * 6;
 		}
-		.Depth9 {
+		.Depth9 a {
 			padding-left: 15px + 4px * 7;
 		}
-		.Depth10 {
+		.Depth10 a {
 			padding-left: 15px + 4px * 8;
 		}
-		.Depth11 {
+		.Depth11 a {
 			padding-left: 15px + 4px * 9;
 		}
-		.Depth12 {
+		.Depth12 a {
 			padding-left: 15px + 4px * 10;
 		}
 	}

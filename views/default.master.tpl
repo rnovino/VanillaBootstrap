@@ -174,15 +174,6 @@
 	// Fix an annoying bug
 	$('body').removeClass('thumbnail');
 	
-	// Lazy load images
-	$('img:not(#cropbox):not(#preview)').each(function() {
-		$(this).attr('data-original', $(this).attr('src'));
-		$(this).attr('src', 'http://placehold.it/1x1');
-	});
-	$('img').lazyload({
-		effect : 'fadeIn'
-	});
-	
 	// Buttons
 	$('.Button').toggleClass('Button btn');
 	$('.Button').livequery(function() {
@@ -250,10 +241,24 @@
 		$(this).parent().addClass('divider');
 		$(this).remove();
 	});
-	$('.FilterMenu').each(function() {
+	$('.FilterMenu, .PanelInfo').each(function() {
 		$(this).addClass('nav nav-list');
-		$(this).find('.Active').addClass('active');
+		$(this).find('.Active').toggleClass('Active active');
 		//$(this).find('li a').append('<i class="icon-chevron-right"></i>');
+	});
+	
+	// Change structure of panels
+	$('.PanelInfo li').each(function() {
+		var $text = $(this).contents()
+			.filter(function() {
+				return this.nodeType == Node.TEXT_NODE;
+			}).text();
+		var $text = '<span class="Aside"><span class="Count badge badge-info">'+$.trim($text)+'</span></span>';
+		var $img = $(this).find('img').outerHTML();
+		var $link = $(this).find('a:not(.PhotoWrap)').outerHTML();
+		var $aside = $(this).find('.Aside').outerHTML();
+		$(this).empty().append($link).find('a').append($img + $aside + $text);
+		$(this).find('.Aside:empty, .badge:empty').remove();
 	});
 	
 	// Modals
@@ -291,6 +296,15 @@
 	});
 	$('body.Conversations.add #panel, body.Vanilla.Post #panel').remove();
 	$('body.Conversations.add #content, body.Vanilla.Post #content').toggleClass('span9 span10 offset1');
+	
+	// Lazy load images
+	$('img:not(#cropbox):not(#preview)').each(function() {
+		$(this).attr('data-original', $(this).attr('src'));
+		$(this).attr('src', 'http://placehold.it/1x1');
+	});
+	$('img').lazyload({
+		effect : 'fadeIn'
+	});
 	
 	</script>{/literal}
 	
