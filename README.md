@@ -24,7 +24,8 @@ Table of contents
 	3. [Bootswatches](#bootswatches)
 4. [Compatibility](#compatibility)
 	1. [Tagging](#tagging)
-	2. [Incompatibilities](#incompatibilities)
+	2. [Page Speed](#page-speed)
+	3. [Incompatibilities](#incompatibilities)
 
 Requirements
 ------------
