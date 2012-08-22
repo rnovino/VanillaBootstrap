@@ -119,9 +119,12 @@
 	}
 	
 	input {
-		min-height: 30px;
+		height: auto !important;
 		&.InputBox:focus {
 			background-color: @bodyBackground;
+		}
+		&.search-query {
+			min-height: 30px;
 		}
 	}
 	
@@ -132,16 +135,16 @@
 	// Labels
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.CheckBoxLabel {
+	.DiscussionForm .PostOptions label {
 		display: inline-block;
-		padding-top: 5px;
-		margin: 0 10px 0 0;
-		vertical-align: middle;
-		input {
-			float: left;
-			margin-right: 5px;
+	}
+	
+	body.Entry form ul li label {
+		&.checkbox, &.radio {
+			padding: 0 0 0 18px;
 		}
 	}
+	
 
 // Main Navigation
 // --------------------------------------------------------------------------------------------------- //
@@ -208,7 +211,7 @@
 	
 	.Discussion .PageTitle h1 {
 		margin-top: 0;
-		margin-bottom: 0;
+		margin-bottom: 15px;
 	}
 	
 	.DiscussionHeader {
@@ -224,12 +227,22 @@
 		}
 	}
 	
-	h2.CommentHeading,
 	.MessageForm h2 {
 		margin-top: 0;
 		font-size: 24px;
 		line-height: 1.2;
 	}
+	
+	.BeforeCommentHeading {
+		margin-bottom: 10px;
+	}
+	
+	h2.CommentHeading {
+		margin-top: 0;
+		font-size: 18px;
+		line-height: 1.2;
+	}
+	
 	
 	.MessageList .Message {
 		padding-top: 0;
@@ -290,6 +303,7 @@
 		margin-bottom: 10px;
 		&.Comments .Item {
 			padding: 15px 0px;
+			margin: 0;
 			.Message {
 				margin: 10px 0 0;
 			}
@@ -315,13 +329,17 @@
 	}
 	
 	.MessageList {
+		&.DataList {
+			margin-top: 15px;
+		}
 		.Item-Header {
 			overflow: auto;
 			margin-top: 0;
 			margin-bottom: 10px;
 		}
 		.Item {
-			padding: 15px 0;
+			padding: 0 0 15px;
+			margin: 15px 0 0;
 		}
 	}
 	
@@ -386,13 +404,6 @@
 		.btn {
 			vertical-align: top;
 		}
-	}
-	
-	// New Discussion
-	// ----------------------------------------------------------------------------------------------- //
-	
-	.DiscussionForm .PostOptions label {
-		display: inline-block;
 	}
 		
 	// Options Menus
@@ -497,6 +508,10 @@
 	
 	// Pagination
 	// ----------------------------------------------------------------------------------------------- //
+	
+	.PagerWrap {
+		overflow: visible;
+	}
 	
 	.Pager a,
 	.Pager span {
@@ -789,18 +804,10 @@
 			}
 			&[type="checkbox"] {
 				width: auto;
-				float: left;
-				margin: 0 5px 0 0;
-				height: 30px;
 			}
 		}
 		label {
 			margin-bottom: 9px;
-		}
-		.CheckBoxLabel {
-			display: inline-block;
-			margin: 0;
-			line-height: 30px;
 		}
 		li {
 			clear: both;
@@ -816,6 +823,15 @@
 			width: 100%;
 			line-height: 30px;
 			margin-top: 9px;
+		}
+		.CheckBoxLabel {
+			display: inline-block;
+			margin: 0;
+			line-height: 30px;
+		}
+		.SignInRememberMe {
+			height: 30px;
+			margin: 0 5px 0 0;
 		}
 	}
 	
@@ -891,6 +907,9 @@
 		.FormWrapper {
 			padding: 15px 25px;
 			.border-radius(5px);
+		}
+		.CaptchaInput {
+			margin-bottom: 10px;
 		}
 	}
 	

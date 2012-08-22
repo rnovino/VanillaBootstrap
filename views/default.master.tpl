@@ -7,9 +7,6 @@
 	
 	{literal}<script type="text/javascript">
 		$('html').hide();
-		$(document).ready(function() {
-			$('html').show();
-		});
 	</script>{/literal}
 	
 </head>
@@ -205,6 +202,10 @@
 		$(this).addClass('btn-primary');
 	});
 	
+	// Checkboxes and radio buttons
+	$('.CheckBoxLabel').toggleClass('CheckBoxLabel checkbox');
+	$('.RadioLabel').toggleClass('RadioLabel radio');
+	
 	// Labels and Badges
 	$('.Tag').addClass('label');
 	$('.Count').addClass('badge badge-info');
@@ -220,9 +221,9 @@
 	$('.MorePager').livequery(function() {
 		$(this).find('a').addClass('btn btn-small btn-block');
 	});
-	$('.PageControls').each(function() {
-		$(this).find('.Pager').addClass('btn-group');
-		$(this).find('a, span').addClass('btn');
+	$('.NumberedPager').each(function() {
+		$(this).addClass('btn-group');
+		$(this).find('a, span').addClass('btn btn-small');
 		$(this).find('.Highlight').addClass('active');
 	});
 	
