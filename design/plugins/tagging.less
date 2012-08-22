@@ -67,6 +67,7 @@
 ul.token-input-list-bootstrap {
 	.uneditable-input;
 	width: 100%;
+	min-height: 32px;
 	cursor: text; 
 	overflow: hidden; 
 	height: auto !important; 
@@ -119,6 +120,9 @@ ul.token-input-list-bootstrap li.token-input-token-bootstrap span.token-input-de
 
 ul.token-input-list-bootstrap li.token-input-token-bootstrap.token-input-selected-token-bootstrap {
 	.buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+	border: 1px solid @btnBorder;
+	*border: 0; // Remove the border to prevent IE7's black border on input:focus
+	border-bottom-color: darken(@btnBorder, 10%);
 	color: #fff;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 }
