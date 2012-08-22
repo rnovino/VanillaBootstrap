@@ -24,6 +24,7 @@ Table of contents
 	3. [Bootswatches](#bootswatches)
 4. [Compatibility](#compatibility)
 	1. [Tagging](#tagging)
+	2. [Incompatibilities][#incompatibilities]
 
 Requirements
 ------------
@@ -74,9 +75,9 @@ As always, VanillaBootstrap comes prepackaged with all the wonderful Bootswatche
 Compatibility
 -------------
 
-VanillaBootstrap is compatible with all Vanilla plugins but as these are written for the default Vanilla theme, many of them requires an extra layer of LESS to match the Bootstrap-look. Some will also require a few changes to their core if you want them to be completely integrated with VanillaBootstrap.
+VanillaBootstrap is compatible with all* Vanilla plugins but as these are written for the default Vanilla theme, many of them requires an extra layer of LESS to match the Bootstrap-look. Some will also require a few changes to their core if you want them to be completely integrated with VanillaBootstrap.
 
-The following is a list of the plugins I've added extra styles for as well as instructions on how to integrate them with VanillaBootstrap. By default, these extra stylesheets are _not_ called so you'll have to do this yourself by un-commenting the corresponding lines in `main.less`. Some of the stylesheets are rather heavy, which is why I've disabled them by default.
+The following is a list of the plugins I've added extra styles for as well as instructions on how to integrate them with VanillaBootstrap. By default, these extra stylesheets are _not_ called so you'll have to do this yourself by un-commenting the corresponding lines in `main.less`.
 
 #### Tagging
 
@@ -86,3 +87,14 @@ The Tagging plugin can be completely integrated with VanillaBootstrap by adding 
     animateDropdown: false
 
 to the file `class.tagging.plugin.php` around line `420`. This will ensure that the `tokeninput` plugin doesn't utilize its default styling but instead uses the Bootstrap theme that comes bundled with VanillaBootstrap and that the autocomplete dropdown won't behave strangely.
+
+#### Page Speed
+
+There are no extra styles needed for the Page Speed plugin to work - there are however some steps you _must_ follow unless you want to end up seeing a blank page. Don't worry, it's dead simple! First off, when using the Page Speed plugin with VanillaBootstrap the option `Defer Javascript` must always the set to `disable`. Secondly, you'll need to set your jQuery version to _**at least**_ the latest version - the same goes for jQuery UI. You can find the latest versions here https://developers.google.com/speed/libraries/devguide#jquery (jQuery UI is found just beneath jQuery).
+
+#### Incompatibilities
+
+*_Please note, that there are a **few** plugins that VanillaBootstrap is **NOT** compatible with. So far, these can be listed:_
+
+- __Buttons__ by Mark O'Sullivan - VanillaBootstrap already takes care of button coloring.
+- __Chosen Category__ by myself - VanillaBootstrap includes a custom version of Chosen Category.
