@@ -175,7 +175,7 @@
 	$('body').removeClass('thumbnail');
 	
 	// Lazy load images
-	$('img:not(#cropbox)').each(function() {
+	$('img:not(#cropbox):not(#preview)').each(function() {
 		$(this).attr('data-original', $(this).attr('src'));
 		$(this).attr('src', 'http://placehold.it/1x1');
 	});
