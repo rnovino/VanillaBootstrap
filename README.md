@@ -1,7 +1,7 @@
 VanillaBootstrap
 ================
 
-__Reading time:__ 3 minutes and 42 seconds
+__Reading time:__ 4 minutes and 41 seconds
 
 #### A modern Vanilla theme based on Bootstrap from Twitter
 
@@ -22,6 +22,8 @@ Table of contents
 	1. [Prerequisites](#prerequisites)
 	2. [Themes](#themes)
 	3. [Bootswatches](#bootswatches)
+4. [Compatibility](#compatibility)
+	1. [Tagging](#tagging)
 
 Requirements
 ------------
@@ -67,4 +69,20 @@ __When you update your VanillaBootstrap theme, make sure to backup your custom t
 
 #### Bootswatches
 
-As always, VanillaBootstrap comes prepackaged with all the wonderful Bootswatches by Thomas Park. These are currently _not_ compatible with Bootstrap 2.1.0 and as such they shouldn't be used just yet. 
+As always, VanillaBootstrap comes prepackaged with all the wonderful Bootswatches by Thomas Park. These are currently _not_ compatible with Bootstrap 2.1.0 and as such they shouldn't be used just yet.
+
+Compatibility
+-------------
+
+VanillaBootstrap is compatible with all Vanilla plugins but as these are written for the default Vanilla theme, many of them requires an extra layer of LESS to match the Bootstrap-look. Some will also require a few changes to their core if you want them to be completely integrated with VanillaBootstrap.
+
+The following is a list of the plugins I've added extra styles for as well as instructions on how to integrate them with VanillaBootstrap. By default, these extra stylesheets are _not_ called so you'll have to do this yourself by un-commenting the corresponding lines in `main.less`. Some of the stylesheets are rather heavy, which is why I've disabled them by default.
+
+#### Tagging
+
+The Tagging plugin can be completely integrated with VanillaBootstrap by adding a few extra variables to the Javascript-call that initializes the plugin. You'll need to add these
+
+    theme: "bootstrap"
+    animateDropdown: false
+
+to the file `class.tagging.plugin.php` around line `420`. This will ensure that the `tokeninput` plugin doesn't utilize its default styling but instead uses the Bootstrap theme that comes bundled with VanillaBootstrap and that the autocomplete dropdown won't behave strangely.
