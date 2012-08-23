@@ -130,6 +130,7 @@
 		&.InputBox,
 		&.SmallInput,
 		textarea {
+			min-height: 30px;
 			font-family: @sansFontFamily;
 		}
 	}
@@ -730,7 +731,8 @@
 	}
 	
 	.Overlay {
-		background-color: rgba(0,0,0,.8);
+		#translucent > .background(black, 0.8);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000);
 	}
 	
 	#Popup {

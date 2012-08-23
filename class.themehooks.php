@@ -28,7 +28,7 @@ function autoCompileLess($inputFile, $outputFile) {
 autoCompileLess(	dirname(__FILE__) . '/design/main.less',
 					dirname(__FILE__) . '/design/custom.css');
 
-class BootstrapThemeHooks implements Gdn_IPlugin {
+class VanillaBootstrapThemeHooks implements Gdn_IPlugin {
 	
 	public function Setup() {
 		return TRUE;

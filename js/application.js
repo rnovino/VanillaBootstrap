@@ -119,7 +119,7 @@ jQuery(document).ready(function() {
 	// Modals
 	$('.Popup').livequery(function() { $(this).find('.Body').addClass('modal'); });
 	$('.Popup h1, .Popup h2').livequery(function() { $(this).addClass('modal-header'); });
-	$('.Popup .Content .MainForm, .Popup .Content .Legal, .Popup .Content > form, .Popup .Content > div, .Popup .Content > p, .Popup .Content .Methods').livequery(function() { $(this).addClass('modal-body'); });
+	$('.Popup .Content .MainForm, .Popup .Content .Legal, .Popup .Content > form, .Popup .Content > p, .Popup .Content .Methods').livequery(function() { $(this).addClass('modal-body'); });
 	$('.Popup .Footer span').livequery(function() { $(this).addClass('close'); });
 	
 	// Grouped Buttons
