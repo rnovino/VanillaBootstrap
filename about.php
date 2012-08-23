@@ -1,6 +1,6 @@
 <?php if (!defined('APPLICATION')) exit();
-$ThemeInfo['Bootstrap'] = array(
-   'Name' => 'Bootstrap',
+$ThemeInfo['VanillaBootstrap'] = array(
+   'Name' => 'VanillaBootstrap',
    'Description' => "Based on Bootstrap from Twitter and inspired by the Twitter dev site.<br>Be sure to read the documentation found here: <a href='https://github.com/kasperisager/VanillaBootstrap'>https://github.com/kasperisager/VanillaBootstrap</a>",
    'Version' => '2.0a-2.1',
    'Author' => "Kasper K. Isager",
