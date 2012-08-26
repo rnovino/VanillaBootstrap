@@ -16,15 +16,15 @@
 	a {
 		margin-left: 15px;
 		padding: 0 10px 0 12px;
-		background: @linkColor;
+		background: @infoText;
 		color: @white;
 		font-weight: bold;
 		text-decoration: none;
 		.border-radius(0 4px 4px 0);
 		&:hover {
-			background: @linkColorHover;
+			background: darken(@infoText, 10%);
 			&:before {
-				border-color:transparent @linkColorHover transparent transparent;
+				border-color:transparent darken(@infoText, 10%) transparent transparent;
 			}
 		}
 		&:before {
@@ -35,7 +35,7 @@
 			left:-12px;
 			width:0;
 			height:0;
-			border-color:transparent @linkColor transparent transparent;
+			border-color:transparent @infoText transparent transparent;
 			border-style:solid;
 			border-width:12px 12px 12px 0;
 		}
