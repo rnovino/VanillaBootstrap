@@ -76,11 +76,10 @@ jQuery(document).ready(function() {
 	
 	// Buttons
 	$('.Button').toggleClass('Button btn');
-	$('a.Cancel, .Danger').addClass('btn btn-danger');
 	$('.NavButton').toggleClass('NavButton btn');
-	$('.NewDiscussion').addClass('btn-primary');
+	$('a.Cancel, .Danger').addClass('btn btn-danger');
+	$('.Primary.btn, .DiscussionButton, .NewDiscussion').addClass('btn-primary');
 	$('.ButtonGroup.Big .btn').addClass('btn-large');
-	$('.Primary.btn, .DiscussionButton').addClass('btn-primary');
 	
 	// Checkboxes and radio buttons
 	$('.CheckBoxLabel').toggleClass('CheckBoxLabel checkbox');
@@ -229,12 +228,12 @@ jQuery(document).ready(function() {
 	});
 	$('.Popup .Content').livequery(function() {
 		$(this).children('h1, h2').addClass('modal-header');
-		$(this).children('*:not(.modal-header)').addClass('modal-body');
+		$(this).children('*:not(.modal-header):not(.Entry)').addClass('modal-body');
 	});
 	$('.Popup .Content').find('h1, h2').livequery(function() {
 		$(this).addClass('modal-header');
 	});
-	$('.Popup .Content').find('> *:not(.modal-header)').livequery(function() {
+	$('.Popup .Content').find('> *:not(.modal-header):not(.Entry)').livequery(function() {
 		$(this).addClass('modal-body');
 	});
 	$('.Popup .Footer').livequery(function() {
