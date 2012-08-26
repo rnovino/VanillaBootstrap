@@ -23,12 +23,14 @@
 // Bootswatches
 // --------------------------------------------------------------------------------------------------- //
 
-	// Change "{SWATCH}" in the url to a swatch of your liking. The included swatches can be found in
+	// Change the Swatch variable to a Bootswatch of your liking. The included swatches can be found in
 	// the swatches direcotry. Swatches included: Cerulean, Journal, Simplex, Slate, Spacelab and United.
-	// NB: This version of VanillaBootstrap doesn't yet support Bootswatches!
+	// Remember to uncomment the two lines below the Swatch variable!
 	
-	//@import "swatches/{SWATCH}/variables";
-	//@import "swatches/{SWATCH}/bootswatch";
+	@swatch: your-swatch;
+	
+	//@import "swatches/@{swatch}/variables";
+	//@import "swatches/@{swatch}/bootswatch";
 		
 		
 // Basic HTML Elements
