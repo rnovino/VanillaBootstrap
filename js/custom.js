@@ -228,11 +228,21 @@ jQuery(document).ready(function() {
 	$('.Popup').livequery(function() {
 		$(this).find('.Body').addClass('modal');
 	});
-	$('.Popup h1, .Popup h2').livequery(function() { $(this).addClass('modal-header'); });
-	$('.Popup .Content .MainForm, .Popup .Content .Legal, .Popup .Content > form, .Popup .Content > p, .Popup .Content .Methods').livequery(function() { $(this).addClass('modal-body'); });
-	$('.Popup .Footer span').livequery(function() { $(this).addClass('close'); });
+	$('.Popup .Content').livequery(function() {
+		$(this).children('h1, h2').addClass('modal-header');
+		$(this).children('*:not(.modal-header)').addClass('modal-body');
+	});
+	$('.Popup .Content').find('h1, h2').livequery(function() {
+		$(this).addClass('modal-header');
+	});
+	$('.Popup .Content').find('> *:not(.modal-header)').livequery(function() {
+		$(this).addClass('modal-body');
+	});
+	$('.Popup .Footer').livequery(function() {
+		$(this).find('span').addClass('close');
+	});
 	$('.Overlay').livequery(function() {
-		$(this).fadeIn(200);
+		$(this).fadeIn(150);
 	});
 	
 	// Grouped Buttons
