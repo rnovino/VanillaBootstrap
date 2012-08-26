@@ -40,12 +40,6 @@
 		word-wrap: break-word;
 	}
 	
-	body {
-		> .container {
-			padding-top: 20px;
-		}
-	}
-	
 	a:hover {
 		text-decoration: none;
 	}
@@ -183,10 +177,15 @@
 	
 // Subheader Content
 // --------------------------------------------------------------------------------------------------- //
-
+	
+	.subhead {
+		border-bottom: none;
+	}
+	
 	.bs-docs-social {
 		padding: 0; 
 		text-align: left;
+		.border-radius(0);
 		.Breadcrumbs {
 			display: inline-block;
 			padding: 9px 0 11px;
@@ -203,6 +202,16 @@
 			}
 			.CrumbLabel:last-child a {
 				color: @grayLight;
+			}
+		}
+		li {
+			display: block;
+		}
+		.dropdown-menu {
+			a {
+				color: @dropdownLinkColor;
+				font-weight: normal;
+				text-shadow: none;
 			}
 		}
 	}
@@ -437,7 +446,10 @@
 			right: 10px;
 		}
 		&:before {
-			border-bottom: 7px solid #CCC;
+			border-bottom: 7px solid @dropdownBorder;
+		}
+		&:after {
+			border-bottom-color: @dropdownBackground;
 		}
 	}
 	
@@ -606,7 +618,10 @@
 				left: auto;
 			}
 			&:before {
-				border-bottom: 7px solid #CCC;
+				border-bottom: 7px solid @dropdownBorder;
+			}
+			&:after {
+				border-bottom-color: @dropdownBackground;
 			}
 		}
 	}
@@ -734,6 +749,7 @@
 	}
 	
 	.Overlay {
+		display: none;
 		#translucent > .background(black, 0.8);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000);
 	}
@@ -743,6 +759,7 @@
 			padding: 0;
 		}
 		.Body {
+			background: @bodyBackground;
 			padding: 0;
 		}
 		.modal-header {

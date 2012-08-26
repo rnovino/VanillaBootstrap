@@ -232,10 +232,15 @@ jQuery(document).ready(function() {
 	});
 	
 	// Modals
-	$('.Popup').livequery(function() { $(this).find('.Body').addClass('modal'); });
+	$('.Popup').livequery(function() {
+		$(this).find('.Body').addClass('modal');
+	});
 	$('.Popup h1, .Popup h2').livequery(function() { $(this).addClass('modal-header'); });
 	$('.Popup .Content .MainForm, .Popup .Content .Legal, .Popup .Content > form, .Popup .Content > p, .Popup .Content .Methods').livequery(function() { $(this).addClass('modal-body'); });
 	$('.Popup .Footer span').livequery(function() { $(this).addClass('close'); });
+	$('.Overlay').livequery(function() {
+		$(this).fadeIn(200);
+	});
 	
 	// Grouped Buttons
 	$('.ButtonGroup').livequery(function() {
