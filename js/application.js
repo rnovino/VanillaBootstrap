@@ -67,6 +67,118 @@ jQuery(document).ready(function() {
 	
 });
 
+// Non-livequery based markup changes
+jQuery(document).ready(function() {
+	
+	// Why is all of this stuff placed here?
+	//
+	// You see, I place it at the end of the body element to avoid a FOUC
+	// as the JS would otherwise be executed after the DOM is created.
+	
+	// Fix an annoying bug
+	$('body').removeClass('thumbnail');
+	
+	// Buttons
+	$('.Button').toggleClass('Button btn');
+	$('a.Cancel, .Danger').addClass('btn btn-danger');
+	$('.NavButton').toggleClass('NavButton btn');
+	$('.NewDiscussion').addClass('btn-primary');
+	$('.ButtonGroup.Big .btn').addClass('btn-large');
+	
+	// Checkboxes and radio buttons
+	$('.CheckBoxLabel').toggleClass('CheckBoxLabel checkbox');
+	$('.RadioLabel').toggleClass('RadioLabel radio');
+	
+	// Labels and Badges
+	$('.Tag').addClass('label');
+	$('.Count').addClass('badge badge-info');
+	$('.Alert').addClass('badge badge-important');
+	$('.HasNew').addClass('badge badge-warning');
+	
+	// Alerts
+	$('.AlertMessage, .InfoMessage').addClass('alert');
+	$('.CasualMessage').addClass('alert alert-info');
+	$('.WarningMessage').addClass('alert alert-danger');
+	
+	// Pagination
+	$('.NumberedPager').each(function() {
+		$(this).addClass('btn-group');
+		$(this).find('a, span').addClass('btn btn-small');
+		$(this).find('.Highlight').addClass('active');
+	});
+	
+	// Flyout Menus
+	$('.MenuItems').toggleClass('MenuItems dropdown-menu');
+	$('.FlyoutMenu').addClass('dropdown-menu');
+	
+	// Navigation
+	$('.navbar form').each(function() {
+		$(this).addClass('navbar-search pull-left');
+		$(this).find('input').addClass('search-query span2').attr('placeholder','Search...');
+		$(this).find('input[type="submit"]').remove();
+	});
+	$('.FilterMenu, .PanelInfo').each(function() {
+		$(this).toggleClass('nav nav-list');
+		$(this).find('.Active').toggleClass('Active active');
+		//$(this).find('li a').append('<i class="icon-chevron-right"></i>');
+	});
+	
+	// Change structure of panels
+	$('.PanelInfo li:not(.Heading)').each(function() {
+		var $text = $(this).contents()
+			.filter(function() {
+				return this.nodeType == Node.TEXT_NODE;
+			}).text();
+		var $text = '<span class="Aside"><span class="Count badge badge-info">'+$.trim($text)+'</span></span>';
+		var $img = $(this).find('img').outerHTML();
+		var $link = $(this).find('a:not(.PhotoWrap)').outerHTML();
+		var $aside = $(this).find('.Aside').outerHTML();
+		$(this).empty().append($link).find('a').append($img + $aside + $text);
+		$(this).find('.Aside:empty, .badge:empty').remove();
+	});
+	$('.PanelInfo li.Heading').each(function() {
+		$(this).toggleClass('Heading nav-header')
+	});
+	
+	// Grouped Buttons
+	$('.ButtonGroup').each(function() {
+		$(this).addClass('btn-group');
+		$(this).find('.btn').addClass('btn-primary');
+		$(this).find('.Handle').each(function() {
+			$(this).addClass('dropdown-toggle').append('<span class="caret"></span>');
+		});
+	});
+	$(document).delegate('.ButtonGroup > .Handle', 'click', function() {
+		var buttonGroup = $(this).parents('.ButtonGroup');
+		if (buttonGroup.hasClass('open')) {
+			$('.ButtonGroup').removeClass('open');
+		} else {
+			$('.ButtonGroup').removeClass('open');
+			buttonGroup.addClass('open');
+		}
+		return false;
+	});
+	
+	// Pages
+	$('.Entry').each(function() {
+		$(this).find('#panel').remove();
+		$(this).find('#content').toggleClass('span9 span6 offset3');
+	});
+	$('body.Conversations.add #panel, body.Vanilla.Post #panel').remove();
+	$('body.Conversations.add #content, body.Vanilla.Post #content').toggleClass('span9 span10 offset1');
+	
+	// Lazy load images
+	$('img:not(#cropbox):not(#preview)').each(function() {
+		$(this).attr('data-original', $(this).attr('src'));
+		$(this).attr('src', 'http://placehold.it/1x1');
+	});
+	$('img').lazyload({
+		effect : 'fadeIn'
+	});
+	
+});
+
+// Livequery based markup changes
 jQuery(document).ready(function() {
 
 	// Buttons
