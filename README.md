@@ -91,7 +91,7 @@ to the file `class.tagging.plugin.php` around line `420`. This will ensure that 
 
 #### Page Speed
 
-There are no extra styles needed for the Page Speed plugin to work - there is however a single step you _must_ follow unless you want to end up seeing a bugged page. Don't worry, it's dead simple! You'll simply need to set your jQuery version to __1.7.2__. You should be able to set jQuery UI to the latest version, but jQuery itself _must_ be set to 1.7.2.
+There are no extra styles needed for the Page Speed plugin to work - there are however some steps you _must_ follow unless you want to end up seeing a blank page. Don't worry, it's dead simple! First off, when using the Page Speed plugin with VanillaBootstrap the option `Defer Javascript` must always the set to `disable`. Secondly, you'll need to set your jQuery version to __1.7.2__. You should be able to set jQuery UI to the latest version, but jQuery itself _must_ be set to 1.7.2.
 
 #### Incompatibilities
 
