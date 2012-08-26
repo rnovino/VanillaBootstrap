@@ -1,6 +1,5 @@
 // Javascript for the VanillaBootstrap theme by Kasper Kronborg Isager
 // Requires jQuery > v1.7.2 in order to function properly
-// Please see the copyright notices for each included plugin
 
 jQuery(document).ready(function() {
 	
