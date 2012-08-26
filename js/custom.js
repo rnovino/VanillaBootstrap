@@ -81,6 +81,7 @@ jQuery(document).ready(function() {
 	$('.NavButton').toggleClass('NavButton btn');
 	$('.NewDiscussion').addClass('btn-primary');
 	$('.ButtonGroup.Big .btn').addClass('btn-large');
+	$('.Primary.btn, .DiscussionButton').addClass('btn-primary');
 	
 	// Checkboxes and radio buttons
 	$('.CheckBoxLabel').toggleClass('CheckBoxLabel checkbox');
