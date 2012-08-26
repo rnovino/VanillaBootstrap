@@ -42,7 +42,7 @@
 		background: #f4f4f4;
 	}
 	
-	.bs-docs-social {
+	.bs-docs-social, .footer {
 		background: @white;
 	}
 	
@@ -80,36 +80,42 @@
 		border-bottom: 1px solid @grayLighter;
 	}
 	
-	#panel ul {
+	.nav-list {
 		font-size: 18px;
 		line-height: 20px;
 		font-weight: 300;
-		padding: 0;
 		li {
-			padding: 5px 8px 6px;
-			margin: 0 0 5px;
-			.border-radius(3px);
-			.transition(250ms linear all);
-			&:hover {
-				background: rgba(0, 0, 0, 0.1);
-				a { color: @linkColorHover; }
-			}
-			&.Active {
-				box-shadow: 0 1px 3px black inset, 0 1px 0 white;
-				background-color: #333 !important;
-				a { color: @white; }
-			}
+			margin-top: 5px;
+			margin-bottom: 5px;
 			&.active a {
-				background: none;
+				@box-shadow: 0 1px 3px black inset, 0 1px 0 white;
+				.box-shadow(@box-shadow);
+				background-color: #333 !important;
+				color: @white;
 			}
 			a {
-				padding: 0;
-				margin: 0;
+				padding-top: 5px;
+				padding-bottom: 5px;
 				color: @textColor;
 				font-weight: 300;
+				.border-radius(3px);
+				.transition(250ms linear all);
 				&:hover {
-					background: none;
+					background: rgba(0, 0, 0, 0.1);
 				}
 			}
+			.Aside {
+				top: -3px;
+			}
+			.badge {
+				background-color: rgba(0,0,0,.5);
+				@box-shadow: 0 1px 3px rgba(0,0,0,.5) inset;
+				.box-shadow(@box-shadow);
+				.border-radius(3px);
+			}
 		}
+	}
+	
+	.QnA-UnansweredQuestions .Aside {
+		margin-top: -25px;
 	}
