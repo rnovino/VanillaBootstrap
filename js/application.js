@@ -64,16 +64,9 @@ jQuery(document).ready(function() {
 		$(this).chosen();
 		
 	});
-	
-});
 
-// Non-livequery based markup changes
-jQuery(document).ready(function() {
-	
-	// Why is all of this stuff placed here?
-	//
-	// You see, I place it at the end of the body element to avoid a FOUC
-	// as the JS would otherwise be executed after the DOM is created.
+	// Non-livequery based markup changes
+	// ---------------------------------
 	
 	// Fix an annoying bug
 	$('body').removeClass('thumbnail');
@@ -175,11 +168,9 @@ jQuery(document).ready(function() {
 	$('img').lazyload({
 		effect : 'fadeIn'
 	});
-	
-});
 
-// Livequery based markup changes
-jQuery(document).ready(function() {
+	// Livequery based markup changes
+	// ------------------------------
 
 	// Buttons
 	$('.Button').livequery(function() {
