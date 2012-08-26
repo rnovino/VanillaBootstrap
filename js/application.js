@@ -230,7 +230,7 @@ jQuery(document).ready(function() {
 		$(this).children('h1, h2').addClass('modal-header');
 		$(this).children('*:not(.modal-header):not(.Entry)').addClass('modal-body');
 	});
-	$('.Popup .Content').find('h1, h2').livequery(function() {
+	$('.Popup .Content').find('> h1, > h2').livequery(function() {
 		$(this).addClass('modal-header');
 	});
 	$('.Popup .Content').find('> *:not(.modal-header):not(.Entry)').livequery(function() {
