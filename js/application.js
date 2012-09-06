@@ -29,6 +29,15 @@ jQuery(document).ready(function() {
 		return false;
 	});
 	
+	// Correctly position markup help
+	$('.CommentForm .Buttons').each(function() {
+		var $markuphelp = $(this).find('.MarkupHelp');
+		var $content = $markuphelp.outerHTML();
+		var $backbutton = $(this).find('.Back');
+		$markuphelp.remove();
+		$backbutton.after($content);
+	});
+	
 	// Nice excerpt popovers
 	$('.ItemDiscussion').each(function() {
 		var $item = $(this).find('a.Title');
@@ -230,7 +239,7 @@ jQuery(document).ready(function() {
 		$(this).children('h1, h2').addClass('modal-header');
 		$(this).children('*:not(.modal-header):not(.Entry)').addClass('modal-body');
 	});
-	$('.Popup .Content').find('> h1, > h2').livequery(function() {
+	$('.Popup .Content h1, .Popup .Content h2').livequery(function() {
 		$(this).addClass('modal-header');
 	});
 	$('.Popup .Content').find('> *:not(.modal-header):not(.Entry)').livequery(function() {
@@ -257,7 +266,7 @@ var RecaptchaOptions = {
 
 // OuterHTML function
 jQuery.fn.outerHTML = function(s) {
-    return s
-        ? this.before(s).remove()
-        : jQuery("<p>").append(this.eq(0).clone()).html();
+	return s
+		? this.before(s).remove()
+		: jQuery("<p>").append(this.eq(0).clone()).html();
 };
