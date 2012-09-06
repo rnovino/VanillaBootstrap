@@ -256,6 +256,11 @@ jQuery(document).ready(function() {
 	$('.ButtonGroup').livequery(function() {
 		$(this).find('.Dropdown').addClass('dropdown-menu');
 	});
+	
+	//Notifications
+	$('.InformMessage').livequery(function() {
+		$(this).toggleClass('InformMessage alert').fadeIn(200);
+	});
 
 });
 
