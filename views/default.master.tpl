@@ -150,7 +150,7 @@
 			<p>The Twitter Bootstrap documentation styles is also created by <a href="http://twitter.com/mdo">@mdo</a> and <a href="http://twitter.com/fat">@fat</a></p>
 			<ul class="footer-links">
 				<li><a href="https://github.com/kasperisager/VanillaBootstrap/issues?state=open">Submit issues</a></li>
-				<li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
+				<li>Created by <a href="http://github.com/kasperisager">Kasper Kronborg Isager</a></li>
 			</ul>
 		</div>
 	</footer>
