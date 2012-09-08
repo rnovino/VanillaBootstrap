@@ -107,7 +107,7 @@
 		</div>
 	</header>
 		
-	<div class="bs-docs-social breadcrumb hidden-phone hidden-tablet">
+	<div class="bs-docs-social breadcrumb hidden-phone">
 		<div class="container">
 			{breadcrumbs}
 			<div class="pull-right">

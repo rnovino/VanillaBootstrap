@@ -143,6 +143,7 @@
 	
 	.TextBoxWrapper {
 		padding-right: 0;
+		position: relative;
 	}
 	
 	// Labels
@@ -362,7 +363,7 @@
 	
 	.MessageList {
 		&.DataList {
-			margin-top: 15px;
+			margin: 15px 0;
 		}
 		.Item-Header {
 			overflow: auto;
@@ -373,6 +374,10 @@
 			padding: 0 0 15px;
 			margin: 15px 0 0;
 		}
+	}
+	
+	.Foot + * {
+		margin: 15px 0 0;
 	}
 	
 	// Category Tables
@@ -416,9 +421,23 @@
 	// Leave a Comment
 	// ----------------------------------------------------------------------------------------------- //
 	
-	.CommentForm .FormWrapper {
-		padding: 0 0 0 50px;
-		background: transparent;
+	.CommentFormWrap {
+		textarea.TextBox {
+			.transition(min-height 0.2s ease);
+			&.Active {
+				min-height: 80px;
+			}
+		}
+	}
+	
+	.CommentForm {
+		.H {
+			display: none;
+		}
+		.FormWrapper {
+			padding: 0 0 0 50px;
+			background: transparent;
+		}
 	}
 	
 	.Form-Header .Author .PhotoWrap {
@@ -983,6 +1002,9 @@
 			margin-left: -5px;
 			margin-right: -5px;
 		}
+		.bootstrap-container {
+			padding-top: 5px;
+		}
 		footer {
 			display: none;
 		}
@@ -1007,7 +1029,7 @@
 		// Hide Elements
 		.CommentForm .Buttons > a, .PageControls .BoxNewDiscussion, .BlockColumn-User, .DraftButton,
 		.PreviewButton, .DataTable .Category, .HomepageTitle, .AlertMessage, .CasualMessage, 
-		.InfoMessage, .WarningMessage {
+		.InfoMessage, .WarningMessage, .CommentForm .Buttons .Back {
 			display: none;
 			visibility: hidden;
 		}
