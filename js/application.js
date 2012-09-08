@@ -76,6 +76,26 @@ jQuery(document).ready(function() {
 		$(this).chosen();
 		
 	});
+	
+	// Leave a Comment label
+	$('.CommentForm textarea').livequery(function(){
+		$(this).attr('placeholder', 'Leave a comment');
+		$(this).superLabels({
+			labelLeft:7,
+			labelTop:5
+		});
+	});
+	
+	// Toggle comment buttons
+	$('.CommentFormWrap .Buttons, .ButtonBar').hide();
+	$('.CommentFormWrap textarea').click(function() {
+		$(this).addClass('Active');
+		$('.CommentFormWrap .Buttons, .ButtonBar').show();
+	});
+	$('.CommentFormWrap').clickOutside(function() {
+		$('.CommentFormWrap .Buttons, .ButtonBar').hide();
+		$('.CommentFormWrap textarea').removeClass('Active');
+	});
 
 	// Non-livequery based markup changes
 	// ---------------------------------
@@ -284,3 +304,19 @@ jQuery.fn.outerHTML = function(s) {
 		? this.before(s).remove()
 		: jQuery("<p>").append(this.eq(0).clone()).html();
 };
+
+// Detect clicks outside elements
+(function(jQuery) {
+	jQuery.fn.clickOutside = function(callback) {
+		var outside = 1, self = $(this);
+		self.cb = callback;
+		this.click(function() {
+			outside = 0;
+		});
+		$(document).click(function() {
+			outside && self.cb();
+			outside = 1;
+		});
+		return $(this);
+	}
+})(jQuery);
