@@ -83,6 +83,9 @@ jQuery(document).ready(function() {
 	// Fix an annoying bug
 	$('body').removeClass('thumbnail');
 	
+	// Icons
+	$('.Tag-Closed').html('<i class="icon-lock icon-white"></i> ');
+	
 	// Buttons
 	$('.Button').toggleClass('Button btn');
 	$('.NavButton').toggleClass('NavButton btn');
@@ -96,6 +99,7 @@ jQuery(document).ready(function() {
 	
 	// Labels and Badges
 	$('.Tag').addClass('label');
+	$('.Tag-Closed').addClass('label-important');
 	$('.Count').addClass('badge badge-info');
 	$('.Alert').addClass('badge badge-important');
 	$('.HasNew').addClass('badge badge-warning');
@@ -183,7 +187,12 @@ jQuery(document).ready(function() {
 
 	// Livequery based markup changes
 	// ------------------------------
-
+	
+	// Icons
+	$('.Note.Closed').livequery(function() {
+		$(this).prepend('<i class="icon-lock"></i> ');
+	});
+	
 	// Buttons
 	$('.Button').livequery(function() {
 		$(this).toggleClass('Button btn');
