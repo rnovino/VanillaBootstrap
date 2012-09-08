@@ -52,14 +52,26 @@
 		background-size: 13px, 29px, 37px, 53px;
 	}
 	
-	.MessageList.Discussion,
-	.DataList.Discussions,
-	.DataBox-Comments {
+	#content {
+		padding: 15px;
+		.box-sizing(border-box);
 		.box;
 	}
 	
+	.DataList {
+		.Item {
+			&:first-child {
+				padding-top: 0;
+				border-top-width: 0;
+			}
+			&:last-child {
+				border-bottom-width: 0;
+			}
+		}
+	}
+	
 	.MessageList.Discussion {
-		padding: 5px 15px 15px;
+		padding: 0;
 		.ItemDiscussion {
 			margin-bottom: 0;
 			padding: 0;
@@ -67,16 +79,16 @@
 	}
 	
 	.DataBox-Comments {
-		padding: 5px 15px 15px;
+		padding: 0;
 		margin-top: 20px;
 	}
 	
 	.Discussion .PageTitle h1,
-	h2.CommentHeading {
+	h2.CommentHeading,
+	.CommentForm .H {
 		font-size: 1.25em;
-		line-height: 1.8em;
-		margin-top: 5px;
-		padding-bottom: 10px;
+		line-height: 1.25em;
+		padding-bottom: 15px;
 		border-bottom: 1px solid @grayLighter;
 	}
 	
@@ -118,4 +130,9 @@
 	
 	.QnA-UnansweredQuestions .Aside {
 		margin-top: -25px;
+	}
+	
+	.TagCloud a,
+	.InlineTags a {
+		.transition(none) !important;
 	}
