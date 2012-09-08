@@ -199,7 +199,7 @@ jQuery(document).ready(function() {
 	// Lazy load images
 	$('img:not(#cropbox):not(#preview)').each(function() {
 		$(this).attr('data-original', $(this).attr('src'));
-		$(this).attr('src', 'http://placehold.it/1x1');
+		$(this).attr('src', 'http://www.placehold.it/1x1');
 	});
 	$('img').lazyload({
 		effect : 'fadeIn'
