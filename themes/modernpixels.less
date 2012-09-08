@@ -20,7 +20,7 @@
 	}
 
 
-// Basic HTML Elements
+// Yeah... it's a mess
 // --------------------------------------------------------------------------------------------------- //
 	
 	a:not(.btn):not(.Bookmark) {
@@ -58,23 +58,67 @@
 		.box;
 	}
 	
-	.DataList {
+	.DataList.Comments {
 		.Item {
+			border-bottom-color: @grayLighter;
 			&:first-child {
 				padding-top: 0;
 				border-top-width: 0;
 			}
-			&:last-child {
-				border-bottom-width: 0;
+			.Item-Header {
+				overflow: visible;
 			}
 		}
 	}
 	
-	.MessageList.Discussion {
-		padding: 0;
-		.ItemDiscussion {
-			margin-bottom: 0;
+	.ActivityComments {
+		.Item:first-child {
+			padding-top: 6px;
+		}
+	}
+	
+	.ProfilePhoto {
+				.border-radius(3px);
+			}
+	
+	.MessageList {
+		&.Discussion {
 			padding: 0;
+			.ItemDiscussion {
+				margin-bottom: 0;
+				padding: 0;
+			}
+		}
+		.Item {
+			.Item-Header {
+				overflow: visible;
+				margin-bottom: 0;
+			}
+			.AuthorWrap {
+				display: inline;
+				a {
+					color: black;
+					font-size: 13px;
+				}
+			}
+			.Message {
+				font-size: 13px;
+				padding-left: 50px;
+				margin-top: 5px !important;
+			}
+			.Meta {
+				display: inline;
+				.DateCreated {
+					float: right;
+					a {
+						color: rgba(0, 0, 0, 0.34);
+					}
+				}
+				.Category {
+					margin-left: 5px;
+					color: rgba(0, 0, 0, 0.34);
+				}
+			}
 		}
 	}
 	
@@ -90,6 +134,15 @@
 		line-height: 1.25em;
 		padding-bottom: 15px;
 		border-bottom: 1px solid @grayLighter;
+	}
+	
+	.CommentForm {
+		textarea {
+			margin-bottom: 0;
+		}
+		.Buttons {
+			padding-bottom: 0;
+		}
 	}
 	
 	.nav-list {
@@ -126,6 +179,11 @@
 				.border-radius(3px);
 			}
 		}
+	}
+	
+	.Entry.register #content .FormWrapper {
+		background-color: transparent;
+		padding: 0;
 	}
 	
 	.QnA-UnansweredQuestions .Aside {
