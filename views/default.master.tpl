@@ -5,9 +5,9 @@
 	{asset name='Head'}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	{literal}<script type="text/javascript">
-		$('html').hide();
-	</script>{/literal}
+	{literal}
+		<script type="text/javascript">$('html').hide();</script>
+	{/literal}
 	
 </head>
 <body id="{$BodyID}" class="{$BodyClass}" onload="prettyPrint()">
